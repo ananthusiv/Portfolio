@@ -1,15 +1,15 @@
 /* General Styling */
 body {
   background: linear-gradient(135deg, #000, #1a1a1a);
-  color: white;
+  color: var(--text-color);
   font-family: 'Roboto', Arial, sans-serif;
   margin: 0;
   padding: 0;
   line-height: 1.6;
-  overflow-x: hidden;  /
-}/* General Styles */
+  overflow-x: hidden; /* Fixed commented line */
+}
 
-
+/* Root Variables */
 :root {
   --primary-color: #007bff;
   --secondary-color: #363535;
@@ -18,17 +18,18 @@ body {
   --text-light-color: #fff;
 }
 
-
 /* Navbar */
 .navbar {
   padding: 10px 20px;
 }
+
 .navbar-brand img {
   width: 40px;
   height: auto;
 }
+
 .navbar-nav .nav-link {
-  color: #fff !important;
+  color: var(--text-color) !important;
   text-decoration: none;
   padding: 5px 10px;
   position: relative;
@@ -58,59 +59,19 @@ body {
   left: 0;
 }
 
-/* Navbar Toggler Button */
+/* Navbar Toggler Button (Bootstrap Default) */
 .navbar-toggler {
   border: none;
   background-color: transparent;
   padding: 10px;
 }
 
-/* Navbar Toggler Icon */
+/* Navbar Toggler Icon (Bootstrap Default) */
 .navbar-toggler-icon {
-  background-color: transparent;
-  position: relative;
-  width: 30px;
-  height: 25px;
-  background-image: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3E%3Cpath fill='none' stroke='%23ffffff' stroke-width='2' d='M5 7h20M5 15h20M5 23h20'%3E%3C/path%3E%3C/svg%3E");
 }
 
-.navbar-toggler-icon::before,
-.navbar-toggler-icon::after,
-.navbar-toggler-icon span {
-  content: '';
-  position: absolute;
-  height: 4px;
-  width: 100%;
-  background-color: white;
-  transition: all 0.3s ease-in-out;
-}
-
-.navbar-toggler-icon::before {
-  top: 0;
-}
-
-.navbar-toggler-icon span {
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.navbar-toggler-icon::after {
-  bottom: 0;
-}
-
-.navbar-toggler:not(.collapsed) .navbar-toggler-icon::before {
-  transform: rotate(45deg);
-  top: 50%;
-}
-
-.navbar-toggler:not(.collapsed) .navbar-toggler-icon::after {
-  transform: rotate(-45deg);
-  bottom: 50%;
-}
-
-.navbar-toggler:not(.collapsed) .navbar-toggler-icon span {
-  opacity: 0;
-}
+/* Navbar responsiveness */
 @media (max-width: 992px) {
   .nav-link {
     font-size: 0.9rem;
@@ -125,6 +86,7 @@ body {
     font-size: 0.8rem;
   }
 }
+
 /* Intro Section */
 .intro-section {
   padding: 100px 0;
@@ -187,9 +149,8 @@ body {
   /* Enhance shadow on hover */
 }
 
-
 .project-description {
-  color: white;
+  color: var(--text-color);
   text-align: left;
   padding-left: 20px;
   flex: 1;
@@ -217,12 +178,12 @@ body {
   margin-bottom: 15px;
 }
 
-/*View case study Button */
+/* View Case Study Button */
 .cta-button {
   display: inline-block;
   padding: 10px 20px;
   background: linear-gradient(90deg, #29AFD9, #1f96b6);
-  color: white;
+  color: var(--text-color);
   text-decoration: none;
   font-weight: 700;
   border-radius: 30px;
