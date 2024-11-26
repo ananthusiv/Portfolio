@@ -1,0 +1,780 @@
+/* General Styling */
+body {
+  background: linear-gradient(135deg, #000, #1a1a1a);
+  color: white;
+  font-family: 'Roboto', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  overflow-x: hidden;  /
+}/* General Styles */
+
+
+:root {
+  --primary-color: #007bff;
+  --secondary-color: #363535;
+  --accent-color: #29AFD9;
+  --text-color: white;
+  --text-light-color: #fff;
+}
+
+
+/* Navbar */
+.navbar {
+  padding: 10px 20px;
+}
+.navbar-brand img {
+  width: 40px;
+  height: auto;
+}
+.navbar-nav .nav-link {
+  color: #fff !important;
+  text-decoration: none;
+  padding: 5px 10px;
+  position: relative;
+  transition: color 0.3s ease, transform 0.3s ease;
+  margin: 0 5px;
+  font-size: 1rem;
+}
+
+.navbar-nav .nav-link:hover {
+  color: var(--accent-color) !important;
+  transform: translateY(-3px);
+}
+
+.navbar-nav .nav-link.active {
+  color: var(--accent-color);
+  font-weight: 700;
+}
+
+.navbar-nav .nav-link.active::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent-color), #1f96b6);
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+}
+
+/* Navbar Toggler Button */
+.navbar-toggler {
+  border: none;
+  background-color: transparent;
+  padding: 10px;
+}
+
+/* Navbar Toggler Icon */
+.navbar-toggler-icon {
+  background-color: transparent;
+  position: relative;
+  width: 30px;
+  height: 25px;
+  background-image: none;
+}
+
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after,
+.navbar-toggler-icon span {
+  content: '';
+  position: absolute;
+  height: 4px;
+  width: 100%;
+  background-color: white;
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar-toggler-icon::before {
+  top: 0;
+}
+
+.navbar-toggler-icon span {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.navbar-toggler-icon::after {
+  bottom: 0;
+}
+
+.navbar-toggler:not(.collapsed) .navbar-toggler-icon::before {
+  transform: rotate(45deg);
+  top: 50%;
+}
+
+.navbar-toggler:not(.collapsed) .navbar-toggler-icon::after {
+  transform: rotate(-45deg);
+  bottom: 50%;
+}
+
+.navbar-toggler:not(.collapsed) .navbar-toggler-icon span {
+  opacity: 0;
+}
+@media (max-width: 992px) {
+  .nav-link {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar-brand img {
+    width: 35px;
+  }
+  .nav-link {
+    font-size: 0.8rem;
+  }
+}
+/* Intro Section */
+.intro-section {
+  padding: 100px 0;
+  text-align: center;
+  background: linear-gradient(145deg, #111, #222);
+  box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.8);
+}
+
+.intro-text h1 {
+  font-size: 3rem;
+  color: var(--accent-color);
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  animation: fadeInDown 1s ease-out;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.intro-text h2 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 2rem;
+  font-weight: 300;
+  color: #ccc;
+}
+
+.intro-text p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.25rem;
+  font-style: italic;
+  color: #aaa;
+}
+
+/* Project Section */
+.project-section {
+  padding: 40px 0;
+  flex-direction: column;
+  text-align: center;
+}
+
+.project-image {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  /* Soft shadow for depth */
+}
+
+.project-image:hover {
+  transform: scale(1.05);
+  /* Slight zoom effect */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  /* Enhance shadow on hover */
+}
+
+
+.project-description {
+  color: white;
+  text-align: left;
+  padding-left: 20px;
+  flex: 1;
+}
+
+.project-description h2 {
+  font-family: 'Roboto Slab', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.project-description h3,
+.project-description h4 {
+  font-family: 'Roboto Slab', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.project-description p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 15px;
+}
+
+/*View case study Button */
+.cta-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background: linear-gradient(90deg, #29AFD9, #1f96b6);
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  background: linear-gradient(90deg, #1f96b6, #29AFD9);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.cta-button:focus {
+  outline: 3px solid #29AFD9;
+}
+
+/* Footer */
+.footer {
+  background: #222;
+  padding: 40px 10%;
+  text-align: center;
+}
+
+.footer p {
+  font-size: 1rem;
+  color: #aaa;
+}
+
+.footer-icons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.footer-icons a {
+  color: #aaa;
+  font-size: 1.5rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-icons a:hover {
+  color: var(--accent-color);
+  transform: scale(1.2);
+}
+
+
+/* Main Content */
+.main-container {
+  margin-top: 50px;
+  padding: 0 15px;
+  font-family: 'Merriweather', serif; /* Classic serif font for timeless appeal */
+  color: #333; /* Dark gray text for readability */
+}
+
+/* Profile Section */
+.profile-section .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  align-items: center;
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+/* Profile Image Styling */
+.profile-image {
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+}
+
+/* Intro Heading Styling */
+.intro-heading {
+  font-size: 4rem; /* Default size for larger screens */
+  font-family: 'Playfair Display', serif;
+  color: #2c3e50;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  display: flex;
+  gap: 10px;
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out 0.5s forwards;
+  word-wrap: break-word; /* Prevent overflow */
+  word-break: break-word; /* Break long words to fit */
+  text-align: center; /* Center text for better alignment */
+  line-height: 1.2;
+  max-width: 100%; /* Ensure text doesn't overflow */
+  overflow-wrap: break-word; /* Prevent text from overflowing container */
+}
+/* Magnifier Hover Effect on Each Word */
+.hover-magnify {
+  display: inline-block;
+  transition: transform 0.3s ease, color 0.3s ease;
+  position: relative;
+}
+
+.hover-magnify:hover {
+  transform: scale(1.2); /* Magnifies each word when hovered */
+  color: #3498db; /* Changes color to blue when hovered */
+}
+
+/* Text Box Styling */
+.text-box {
+  text-align: left;
+  padding: 20px;
+}
+
+.about-description {
+  background: linear-gradient(145deg, #111, #222);
+  box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.8);
+  padding: 30px;
+  border-radius: 10px;
+  
+}
+
+.about-description p {
+  color: #fff; /* White text */
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+
+/* Strong Text Styling */
+.about-description strong {
+  color: #3498db;
+  font-weight: 600;
+  font-style: italic;
+}
+
+/* Fade-In Animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+
+/* Tablets (width between 768px and 1024px) */
+@media (max-width: 1024px) {
+  .intro-heading {
+    font-size: 3.5rem; /* Reduce font size for tablets */
+    margin-bottom: 15px;
+    text-align: center;}
+
+  .profile-section .row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profile-image {
+    max-width: 280px; /* Resize image for tablets */
+  }
+
+  .about-description {
+    padding: 30px;
+    font-size: 1.1rem;
+  }
+}
+
+/* Mobile Devices (width between 576px and 768px) */
+@media (max-width: 768px) {
+  .intro-heading {
+    font-size: 2.8rem; /* Further reduce font size for mobile */
+    text-align: center;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+    max-width: 90%; /* Allow some space around the text */
+  }
+
+  .profile-section .row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profile-image {
+    max-width: 250px; /* Resize image for mobile */
+  }
+
+  .about-description {
+    padding: 25px;
+    font-size: 1rem;
+  }
+}
+
+/* Smaller Mobile Devices (width between 320px and 576px) */
+@media (max-width: 576px) {
+  .intro-heading {
+    font-size: 2.2rem; /* Further reduce font size for smaller screens */
+    text-align: center;
+    margin-bottom: 10px;
+    max-width: 80%; /* Ensure smaller containers on very small screens */
+  }
+  .profile-section .row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profile-image {
+    max-width: 200px; /* Resize image for small mobile screens */
+  }
+
+  .about-description {
+    padding: 20px;
+    font-size: 0.95rem;
+  }
+
+  .about-description p {
+    font-size: 0.9rem;
+  }
+}
+
+
+
+
+/* Flex container for image and speech bubble */
+.container-flex {
+  display: flex;
+  align-items: center; /* Vertically align items */
+  justify-content: flex-start; /* Align items to the start (left-aligned) */
+  gap: 10px; /* Add a slight gap between the image and the speech bubble */
+  margin-top: 20px;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+/* Common Title Box Style */
+.title-box {
+  background-color: var(--secondary-color); /* Use secondary color for background */
+  color: var(--text-light-color); /* Use light text color for contrast */
+  text-align: center; /* Center the text */
+  padding: 20px; /* Add padding inside the box */
+  font-size: 1.5rem; /* Adjust font size for prominence */
+  margin-top: 20px; /* Space above the box */
+  width: 100%; /* Ensure full width */
+  box-sizing: border-box; /* Include padding and border in total width/height */
+  border-radius: 8px; /* Add slight rounding for modern design */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Soulmusic Section */
+.Soulmusic-section {
+  margin-top: 40px; /* Add space above the section */
+  max-width: 1200px; /* Restrict the width for better readability */
+  margin-left: auto; /* Center the section horizontally */
+  margin-right: auto; /* Center the section horizontally */
+  padding: 20px; /* Add padding for spacing */
+  box-sizing: border-box; /* Include padding in total width */
+}
+/* Soulmusic Description */
+.Soulmusic-description h2 {
+  font-size: 2rem; /* Large font size for main heading */
+  color: white; /* Darker color for contrast */
+  margin-bottom: 15px; /* Space below the heading */
+}
+
+.Soulmusic-description h3,
+.Soulmusic-description h4 {
+  font-size: 1.5rem; /* Adjusted font size for subheadings */
+  color: white; /* Subtle color variation for hierarchy */
+  margin-bottom: 10px; /* Space below subheadings */
+}
+
+.Soulmusic-description p {
+  font-size: 1.125rem; /* Font size for body text */
+  color: white; /* Slightly lighter text color */
+  line-height: 1.6; /* Improve readability */
+  margin-bottom: 15px; /* Space below paragraphs */
+}
+
+/* Image Styles */
+.img-fluid {
+  width: 100%; /* Allow full width of the container */
+  max-width: 600px; /* Restrict maximum size for balance */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover; /* Ensure the image fits well */
+  border-radius: 20px; /* Rounded corners for a soft look */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Add depth with shadow */
+  margin: auto; /* Center the image horizontally */
+  display: block; /* Ensure block display for centering */
+} 
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container-flex {
+    flex-direction: column; /* Stack items vertically on smaller screens */
+    gap: 20px; /* Increase spacing for better readability */
+  }
+
+  .Soulmusic-description h2 {
+    font-size: 1.75rem; /* Adjust heading size for smaller screens */
+  }
+
+  .Soulmusic-description h3,
+  .Soulmusic-description h4 {
+    font-size: 1.25rem; /* Adjust subheading size */
+  }
+
+  .Soulmusic-description p {
+    font-size: 1rem; /* Slightly smaller text for mobile */
+  }.Soulmusic-description{
+    margin-left: 10px;
+  }
+}
+
+/* Individual Soulmusic Images */
+
+/* General Image Styling */
+.playlist-image {
+  width: 80%;
+  max-width: 400px; /* Set a consistent max width */
+  height: auto; /* Maintain aspect ratio */
+  margin: 10px auto; /* Center image */
+  border-radius: 10px; /* Add rounded corners for a modern look */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  object-fit: cover; /* Ensure consistent cropping */
+}
+/* Align Images in Grid */
+.image-container {
+  display: flex;
+  justify-content: center; /* Center images */
+  align-items: center;
+  flex-wrap: wrap; /* Wrap images on smaller screens */
+  gap: 20px; /* Space between images */
+  margin: 20px 0; /* Add vertical spacing */
+}
+
+.playlist-image:hover {
+  transform: scale(1.05); /* Slight zoom effect */
+  transition: transform 0.3s ease;
+}
+
+
+/* Main Feature Section */
+.Soulmusic-main-section .main-feature-image img {
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+}
+/* Speech bubble styling */
+.col-md-8.text-box.speech-bubble {
+  padding: 10px;
+  font-size: 1rem;
+  max-width: 50%;
+  background: #00bfb6; /* Bubble color */
+  color: #fff; /* Text color */
+  border-radius: 15px; /* Rounded corners */
+  position: relative;
+  font-weight: 100;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+  margin-left: 10px; /* Add a small gap to the left of the bubble */
+  display: inline-block; /* Align inline with the image */
+  vertical-align: top; /* Align with the image */
+}
+
+/* Arrow for speech bubble */
+.col-md-8.text-box.speech-bubble::before {
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  border-left: 15px solid transparent;
+  border-right: 15px solid #00bfb6; /* Same color as the bubble */
+  border-top: 15px solid #00bfb6;
+  border-bottom: 15px solid transparent;
+  left: -10px; /* Position the arrow */
+  top: 20px; /* Align with the speech bubble */
+}@media (max-width: 992px) {
+  .col-md-8.text-box.speech-bubble {
+    max-width: 20%;
+    font-size: 0.9rem;
+  }
+  .playlist-image {
+    max-width: 300px; /* Reduce size for tablets */
+  }
+}
+
+@media (max-width: 576px) {
+  .col-md-8.text-box.speech-bubble {
+    max-width: 20%;
+    font-size: 0.8rem;
+    padding: 10px;
+  }.playlist-image {
+    max-width: 200px; /* Further reduce size for mobile */
+  }
+  
+}/* Speech Bubble on Mobile */
+@media (max-width: 768px) {
+  .col-md-8.text-box.speech-bubble {
+    font-size: 1rem; /* Smaller text size for mobile */
+    max-width: 90%; /* Allow speech bubble to fill more space */
+    padding: 12px;
+  }
+
+  /* Adjusting the title and description font size for better readability */
+  .Soulmusic-description h2 {
+    font-size: 1.75rem; /* Slightly smaller heading */
+  }
+
+  .Soulmusic-description p {
+    font-size: 1rem; /* Adjust paragraph text for mobile */
+  }
+
+  /* Center-align text in the speech bubble on smaller screens */
+  .col-md-8.text-box.speech-bubble {
+    text-align: left;
+    margin-left: 0;
+    margin-right: 10px;
+  }
+
+  /* Image adjustments for mobile */
+  .playlist-image {
+    max-width: 100%;
+    margin-top: 10px;
+  }
+
+  /* Adjust container for smaller screens */
+  .container-flex {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+/* Text Box */
+.text-box {
+  max-width: 100%;
+  padding: 15px;
+  margin: auto;
+  box-sizing: border-box;
+}
+
+.text-box p em {
+  display: inline-block;
+  font-size: 1rem;
+}
+
+/* Priority Revisions Section */
+.priority-revisions {
+  padding: 15px;
+  margin: 20px auto;
+  font-size: 1rem;
+}
+
+.priority-revisions h3 {
+  font-size: 1.5rem;
+}
+
+.priority-revisions ul li {
+  font-size: 1rem;
+}
+
+.priority-revisions ul li {
+  font-size: 1.125rem;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.priority-revisions ul li strong {
+  color: #333;
+}
+
+@media (max-width: 992px) {
+  .priority-revisions h3 {
+    font-size: 1.25rem;
+  }
+  .priority-revisions ul li {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .priority-revisions h3 {
+    font-size: 1.1rem;
+  }
+  .priority-revisions ul li {
+    font-size: 0.85rem;
+  }
+}
+
+/* Responsive Design */
+
+/* For Tablets (Max width 992px) */
+@media (max-width: 992px) {
+  .Soulmusic-description h2 {
+    font-size: 1.7rem;
+  }
+  .Soulmusic-description h3,
+  .Soulmusic-description h4 {
+    font-size: 1.3rem;
+  }
+  .Soulmusic-description p {
+    font-size: 1rem;
+  }
+
+  .Soulmusic-image,
+  .Soulmusic-image-1,
+  .Soulmusic-image-2,
+  .Soulmusic-image-3 {
+    max-width: 100%;
+    margin-left: 10px;
+  }
+
+  /* Adjust speech bubble position for tablets */
+  .col-md-8.text-box.speech-bubble {
+    max-width: 10%; /* Make bubble a bit wider */
+    margin-left: 15px;
+  }
+}
+
+/* For Mobile (Max width 576px) */
+@media (max-width: 576px) {
+  .Soulmusic-description h2 {
+    font-size: 1.5rem;
+  }
+
+  .Soulmusic-description h3,
+  .Soulmusic-description h4 {
+    font-size: 1.2rem;
+  }
+
+  .Soulmusic-image,
+  .Soulmusic-image-1,
+  .Soulmusic-image-2,
+  .Soulmusic-image-3 {
+    max-width: 100%;
+    margin-left: 10px;
+  }
+
+  /* Adjust speech bubble for mobile */
+  .col-md-8.text-box.speech-bubble {
+    max-width: 80%; /* Bubble wider on small screens */
+    font-size: 0.95rem;
+    margin-left: 10px;
+  }
+}
