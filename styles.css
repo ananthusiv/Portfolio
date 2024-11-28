@@ -5,12 +5,74 @@ body {
   font-family: "Roboto", Arial, sans-serif;
   margin: 0;
   padding: 0;
-  line-height: 1.6;
+  line-height: 1rem;
   overflow-x: hidden;
-  /* Fixed commented line */
+  font-weight: 400;
+  font-size: 1rem;
+  overflow-x: hidden;
+}
+/* Global fix for box-sizing */
+* {
+  box-sizing: border-box;
+}
+/* Set box-sizing globally to include padding and borders in the element's total width/height */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-/* Root Variables */
+h2, h3, h4 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  color: #3498db;
+}
+
+.accent-text {
+  font-family: 'Roboto Slab', serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+/* Unified button styles */
+button, .btn, .cta-button {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background-color: #3498db;
+  color: white;
+  padding: 8px 16px; /* Reduced padding to make the button more compact */
+  border-radius: 25px; /* Increased border radius for a more rounded look */
+  border: none;
+  cursor: pointer;
+  font-size: .8rem; /* Adjusted font size */
+  transition: background-color 0.3s, transform 0.2s ease-in-out; /* Smooth transition for hover and transform */
+  display: inline-block; /* Make the button size adjust based on content */
+  text-align: center;
+}
+
+/* Hover effect */
+button:hover, .btn:hover, .cta-button:hover {
+  background-color: #2980b9;
+  transform: scale(1.05); /* Subtle scaling effect to give a modern feel */
+  text-decoration: none;
+}
+
+/* Focus effect */
+.btn:focus, .cta-button:focus, .nav-link:focus {
+  outline: 2px solid #3498db;
+}
+
+/* Optional: Adding a shadow for a more 3D effect */
+button, .btn, .cta-button {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Adding a soft shadow */
+}
+
+button:active, .btn:active, .cta-button:active {
+  transform: scale(0.98); /* Slight shrink when clicked for a pressed effect */
+}
+
 :root {
   --primary-color: #007bff;
   --secondary-color: #363535;
@@ -22,6 +84,13 @@ body {
 /* Navbar */
 .navbar {
   padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1030;
+  background-color: #000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .navbar-brand img {
@@ -29,50 +98,30 @@ body {
   height: auto;
 }
 
-.navbar-nav .nav-link {
-  color: var(--text-color) !important;
-  text-decoration: none;
-  padding: 5px 10px;
-  position: relative;
-  transition: color 0.3s ease, transform 0.3s ease;
-  margin: 0 5px;
-  font-size: 1rem;
-}
-
-.navbar-nav .nav-link:hover {
-  color: var(--accent-color) !important;
-  transform: translateY(-3px);
-}
-
 .navbar-nav .nav-link.active {
   color: var(--accent-color);
   font-weight: 700;
 }
 
-.navbar-nav .nav-link.active::after {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(90deg, var(--accent-color), #1f96b6);
-  position: absolute;
-  bottom: -5px;
-  left: 0;
+.navbar-nav .nav-link {
+  color: #fff;
+  transition: color 0.3s ease;
 }
 
-/* Navbar Toggler Button (Bootstrap Default) */
+.navbar-nav .nav-link:hover {
+  color: #0056b3;
+}
+
 .navbar-toggler {
   border: none;
   background-color: transparent;
   padding: 10px;
 }
 
-/* Navbar Toggler Icon (Bootstrap Default) */
 .navbar-toggler-icon {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3E%3Cpath fill='none' stroke='%23ffffff' stroke-width='2' d='M5 7h20M5 15h20M5 23h20'%3E%3C/path%3E%3C/svg%3E");
 }
 
-/* Navbar responsiveness */
 @media (max-width: 992px) {
   .nav-link {
     font-size: 0.9rem;
@@ -91,116 +140,76 @@ body {
 
 /* Intro Section */
 .intro-section {
-  padding: 100px 0;
+ padding: 150px 100px 100px; /* Increase padding-top to move content down */
   text-align: center;
   background: linear-gradient(145deg, #111, #222);
   box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.8);
 }
 
-.intro-text h1 {
-  font-size: 3rem;
-  color: var(--accent-color);
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-  animation: fadeInDown 1s ease-out;
+.intro-text {
+  max-width: 650px;
+  margin: 0 auto;
 }
 
-@keyframes fadeInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
+.intro-text h1 {
+  font-size: 3.5rem;
+  color: white;
+  margin-bottom: 20px;
+}
 
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.name {
+  color: #3498db;
+  font-weight: 700;
 }
 
 .intro-text h2 {
-  font-family: "Roboto", sans-serif;
   font-size: 2rem;
-  font-weight: 300;
-  color: #ccc;
+  color: #ddd;
+  margin-bottom: 20px;
 }
 
 .intro-text p {
-  font-family: "Roboto", sans-serif;
-  font-size: 1.25rem;
-  font-style: italic;
-  color: #aaa;
+  color: #bbb;
+  font-size: 1.1rem;
 }
 
 /* Project Section */
 .project-section {
-  padding: 40px 0;
-  flex-direction: column;
-  text-align: center;
+  padding: 80px 0;
 }
 
-.project-image {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+.project-card {
+  width: 100%;
+  background: #2d2d2d;
+  box-sizing: border-box;
   border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  /* Soft shadow for depth */
+  transition: transform 0.3s ease-in-out;
 }
 
-.project-image:hover {
+.project-card:hover {
   transform: scale(1.05);
-  /* Slight zoom effect */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-  /* Enhance shadow on hover */
 }
 
-.project-description {
-  color: var(--text-color);
-  text-align: left;
-  padding-left: 20px;
-  flex: 1;
-}
-
-.project-description h2 {
-  font-family: "Roboto Slab", serif;
-  font-size: 2rem;
-  font-weight: 700;
+.project-title {
+  color: #fff;
+  font-size: 2.2rem;
   margin-bottom: 15px;
 }
 
-.project-description h3,
-.project-description h4 {
-  font-family: "Roboto Slab", serif;
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 10px;
+.project-details {
+  color: #ddd;
+  font-size: 1.1rem;
 }
 
-.project-description p {
-  font-family: "Roboto", sans-serif;
-  font-size: 1rem;
-  font-weight: 400;
+.project-heading {
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+.project-text {
   margin-bottom: 15px;
 }
 
-/* View Case Study Button */
-.cta-button {
-  display: inline-block;
-  padding: 10px 20px;
-  background: linear-gradient(90deg, #29afd9, #1f96b6);
-  color: var(--text-color);
-  text-decoration: none;
-  font-weight: 700;
-  border-radius: 30px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
-  transition: all 0.3s ease;
-}
-
-.cta-button:hover {
-  background: linear-gradient(90deg, #1f96b6, #29afd9);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-}
-
-.cta-button:focus {
-  outline: 3px solid #29afd9;
-}
 
 /* Footer */
 .footer {
@@ -230,16 +239,66 @@ body {
 .footer-icons a:hover {
   color: var(--accent-color);
   transform: scale(1.2);
+} 
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .intro-section,
+  .project-section {
+    padding: 20px;
+    
+
+  }
+  .intro-text h1 {
+    font-size: 2.5rem;
+  }
+
+  .intro-text h2 {
+    font-size: 1.5rem;
+  }
+
+  .intro-text p {
+    font-size: 1rem;
+  }
+
+  .project-title {
+    font-size: 1.8rem;
+  }
+
+  .project-details {
+    font-size: 1rem;
+  }
+
+  .cta-button {
+    font-size: 1rem;
+    padding: 10px 18px;
+  }
+  
 }
+
+/* Responsive Adjustments */
+@media (max-width: 576px) {
+  .intro-section,
+  .project-section {
+    padding-top: 120px;  /* Reduce padding */
+    
+  }
+  .intro-text h1 {
+    font-size: 2rem;
+  }
+
+  .project-title {
+    font-size: 1.5rem;
+  }
+}
+
 
 /* Main Content */
 .main-container {
   margin-top: 50px;
   padding: 0 15px;
   font-family: "Merriweather", serif;
-  /* Classic serif font for timeless appeal */
   color: #333;
-  /* Dark gray text for readability */
 }
 
 /* Profile Section */
@@ -247,10 +306,13 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 30px;
+  gap: 20px;
   align-items: center;
   opacity: 0;
   animation: fadeIn 1s ease-in-out forwards;
+  margin: 0;
+  padding: 30px; /* Prevent elements from touching edges */
+  align-items: flex-start; /* Align items to the top */
 }
 
 /* Profile Image Styling */
@@ -261,6 +323,8 @@ body {
   border-radius: 15px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 0;
+  padding-left: 80px;
 }
 
 .profile-image:hover {
@@ -270,11 +334,10 @@ body {
 
 /* Intro Heading Styling */
 .intro-heading {
-  font-size: 4rem;
-  /* Default size for larger screens */
+  font-size: 3.5rem;
   font-family: "Playfair Display", serif;
   color: #2c3e50;
-  margin-bottom: 20px;
+  margin-bottom: 1.5rem;
   text-transform: uppercase;
   letter-spacing: 2px;
   display: flex;
@@ -282,16 +345,11 @@ body {
   opacity: 0;
   animation: fadeIn 1s ease-in-out 0.5s forwards;
   word-wrap: break-word;
-  /* Prevent overflow */
   word-break: break-word;
-  /* Break long words to fit */
   text-align: center;
-  /* Center text for better alignment */
   line-height: 1.2;
   max-width: 100%;
-  /* Ensure text doesn't overflow */
-  overflow-wrap: break-word;
-  /* Prevent text from overflowing container */
+  padding-left: 80px;
 }
 
 /* Magnifier Hover Effect on Each Word */
@@ -303,9 +361,7 @@ body {
 
 .hover-magnify:hover {
   transform: scale(1.2);
-  /* Magnifies each word when hovered */
   color: #3498db;
-  /* Changes color to blue when hovered */
 }
 
 /* Text Box Styling */
@@ -319,13 +375,25 @@ body {
   box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.8);
   padding: 30px;
   border-radius: 10px;
+  margin: 20px auto;
+  max-width: 90%;
+}
+
+/* Make the "Before I became a UX/UI designer" text larger */
+.large-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #3498db;
 }
 
 .about-description p {
   color: #fff;
-  /* White text */
   line-height: 1.8;
   font-size: 1.1rem;
+}
+
+h1, p {
+  margin-bottom: 1.5rem;
 }
 
 /* Strong Text Styling */
@@ -348,13 +416,12 @@ body {
   }
 }
 
-/* Responsive Design */
+/* Media Queries */
 
 /* Tablets (width between 768px and 1024px) */
 @media (max-width: 1024px) {
   .intro-heading {
     font-size: 3.5rem;
-    /* Reduce font size for tablets */
     margin-bottom: 15px;
     text-align: center;
   }
@@ -366,12 +433,15 @@ body {
 
   .profile-image {
     max-width: 280px;
-    /* Resize image for tablets */
   }
 
   .about-description {
     padding: 30px;
     font-size: 1.1rem;
+  }
+
+  .large-text {
+    font-size: 1.3rem;
   }
 }
 
@@ -379,12 +449,10 @@ body {
 @media (max-width: 768px) {
   .intro-heading {
     font-size: 2.8rem;
-    /* Further reduce font size for mobile */
     text-align: center;
     letter-spacing: 1px;
     margin-bottom: 15px;
-    max-width: 90%;
-    /* Allow some space around the text */
+    padding-left: 40px;
   }
 
   .profile-section .row {
@@ -394,12 +462,16 @@ body {
 
   .profile-image {
     max-width: 250px;
-    /* Resize image for mobile */
+    padding-left: 45px;
   }
 
   .about-description {
     padding: 25px;
     font-size: 1rem;
+  }
+
+  .large-text {
+    font-size: 1.3rem;
   }
 }
 
@@ -407,11 +479,9 @@ body {
 @media (max-width: 576px) {
   .intro-heading {
     font-size: 2.2rem;
-    /* Further reduce font size for smaller screens */
     text-align: center;
-    margin-bottom: 10px;
-    max-width: 80%;
-    /* Ensure smaller containers on very small screens */
+    margin-bottom: 1rem;
+    padding-left: 40px;
   }
 
   .profile-section .row {
@@ -421,424 +491,713 @@ body {
 
   .profile-image {
     max-width: 200px;
-    /* Resize image for small mobile screens */
   }
 
   .about-description {
+    margin: 1rem auto;
     padding: 20px;
     font-size: 0.95rem;
+  }
+
+  .large-text {
+    font-size: 1.3rem;
   }
 
   .about-description p {
     font-size: 0.9rem;
   }
 }
-
-/* Flex container for image and speech bubble */
-.container-flex {
-  display: flex;
-  align-items: center;
-  /* Vertically align items */
-  justify-content: flex-start;
-  /* Align items to the start (left-aligned) */
-  gap: 10px;
-  /* Add a slight gap between the image and the speech bubble */
-  margin-top: 20px;
-  flex-wrap: wrap;
-  /* Allow wrapping on smaller screens */
+/* Soulmusic Introduction Section Enhancements */
+/* Speech Bubble Styling */
+.soulmusic-introduction-section .speech-bubble {
+    position: relative;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #f8f9fa;
+    color: #333;
+    font-style: italic;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Common Title Box Style */
-.title-box {
-  background-color: var(--secondary-color);
-  /* Use secondary color for background */
-  color: var(--text-light-color);
-  /* Use light text color for contrast */
-  text-align: center;
-  /* Center the text */
-  padding: 20px;
-  /* Add padding inside the box */
-  font-size: 1.5rem;
-  /* Adjust font size for prominence */
-  margin-top: 20px;
-  /* Space above the box */
-  width: 100%;
-  /* Ensure full width */
-  box-sizing: border-box;
-  /* Include padding and border in total width/height */
-  border-radius: 8px;
-  /* Add slight rounding for modern design */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  /* Subtle shadow for depth */
+.soulmusic-introduction-section .speech-bubble:hover {
+    transform: translateX(5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-/* Soulmusic Section */
-.Soulmusic-section {
-  margin-top: 40px;
-  /* Add space above the section */
-  max-width: 1200px;
-  /* Restrict the width for better readability */
-  margin-left: auto;
-  /* Center the section horizontally */
-  margin-right: auto;
-  /* Center the section horizontally */
-  padding: 20px;
-  /* Add padding for spacing */
-  box-sizing: border-box;
-  /* Include padding in total width */
+.soulmusic-introduction-section .speech-bubble::before {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 30px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10px 10px 0 10px;
+    border-color: #f8f9fa transparent transparent transparent;
 }
 
-/* Soulmusic Description */
-.Soulmusic-description h2 {
-  font-size: 2rem;
-  /* Large font size for main heading */
-  color: white;
-  /* Darker color for contrast */
-  margin-bottom: 15px;
-  /* Space below the heading */
+/* Playlist Image Styling */
+.soulmusic-introduction-section .playlist-image {
+    max-width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.Soulmusic-description h3,
-.Soulmusic-description h4 {
-  font-size: 1.5rem;
-  /* Adjusted font size for subheadings */
-  color: white;
-  /* Subtle color variation for hierarchy */
-  margin-bottom: 10px;
-  /* Space below subheadings */
+.soulmusic-introduction-section .playlist-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
-.Soulmusic-description p {
-  font-size: 1.125rem;
-  /* Font size for body text */
-  color: white;
-  /* Slightly lighter text color */
-  line-height: 1.6;
-  /* Improve readability */
-  margin-bottom: 15px;
-  /* Space below paragraphs */
+/* General Layout Adjustments */
+.soulmusic-introduction-section {
+    background-color: #222;
+    color: #fff;
+    padding: 4rem 1.5rem;
+    border-radius: 12px;
+    margin-top: 50px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* Image Styles */
-.img-fluid {
-  width: 100%;
-  /* Allow full width of the container */
-  max-width: 600px;
-  /* Restrict maximum size for balance */
-  height: auto;
-  /* Maintain aspect ratio */
-  object-fit: cover;
-  /* Ensure the image fits well */
-  border-radius: 20px;
-  /* Rounded corners for a soft look */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  /* Add depth with shadow */
-  margin: auto;
-  /* Center the image horizontally */
-  display: block;
-  /* Ensure block display for centering */
+.soulmusic-introduction-section .title-box {
+    background-color: var(--secondary-color);
+    color: var(--text-light-color);
+    text-align: center;
+    padding: 25px 0;
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.soulmusic-introduction-section .title-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+}
+
+/* Text Box Styling */
+.soulmusic-introduction-section .text-box p {
+    line-height: 1.6;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    color: #f5f5f5;
+}
+
+.soulmusic-introduction-section .text-box strong {
+    color: #00bfb6;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .container-flex {
-    flex-direction: column;
-    /* Stack items vertically on smaller screens */
-    gap: 20px;
-    /* Increase spacing for better readability */
-  }
+    .soulmusic-introduction-section .speech-bubble {
+        text-align: center;
+        margin-bottom: 15px;
+    }
 
-  .Soulmusic-description h2 {
-    font-size: 1.75rem;
-    /* Adjust heading size for smaller screens */
-  }
+    .soulmusic-introduction-section .text-box {
+        text-align: center;
+    }
 
-  .Soulmusic-description h3,
-  .Soulmusic-description h4 {
-    font-size: 1.25rem;
-    /* Adjust subheading size */
-  }
+    .soulmusic-introduction-section .playlist-image {
+        max-width: 100%;
+        margin-top: 15px;
+    }
 
-  .Soulmusic-description p {
-    font-size: 1rem;
-    /* Slightly smaller text for mobile */
-  }
-
-  .Soulmusic-description {
-    margin-left: 10px;
-  }
+    .soulmusic-introduction-section .title-box {
+        font-size: 1.6rem;
+    }
 }
 
-/* Individual Soulmusic Images */
-
-/* General Image Styling */
-.playlist-image {
-  width: 80%;
-  max-width: 400px;
-  /* Set a consistent max width */
-  height: auto;
-  /* Maintain aspect ratio */
-  margin: 10px auto;
-  /* Center image */
-  border-radius: 10px;
-  /* Add rounded corners for a modern look */
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-  /* Subtle shadow */
-  object-fit: cover;
-  /* Ensure consistent cropping */
+.jump-to-section {
+  padding: 2rem;
+  background-color: #2f3133; /* Subtle light gray background for contrast */
+  border-radius: 12px;
 }
 
-/* Align Images in Grid */
-.image-container {
-  display: flex;
-  justify-content: center;
-  /* Center images */
-  align-items: center;
-  flex-wrap: wrap;
-  /* Wrap images on smaller screens */
-  gap: 20px;
-  /* Space between images */
-  margin: 20px 0;
-  /* Add vertical spacing */
-}
-
-.playlist-image:hover {
-  transform: scale(1.05);
-  /* Slight zoom effect */
-  transition: transform 0.3s ease;
-}
-
-/* Main Feature Section */
-.Soulmusic-main-section .main-feature-image img {
-  max-width: 100%;
-  height: auto;
-  margin: 0 auto;
-  display: block;
-}
-
-/* Speech bubble styling */
-.col-md-8.text-box.speech-bubble {
-  padding: 10px;
-  font-size: 1rem;
-  max-width: 50%;
-  background: #00bfb6;
-  /* Bubble color */
+.jump-to-section .title-box {
+  font-size: 1.5rem;
+  font-weight: bold;
   color: #fff;
-  /* Text color */
-  border-radius: 15px;
-  /* Rounded corners */
-  position: relative;
-  font-weight: 100;
-  font-family: Arial, sans-serif;
-  text-align: center;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-  z-index: 2;
-  margin-left: 10px;
-  /* Add a small gap to the left of the bubble */
-  display: inline-block;
-  /* Align inline with the image */
-  vertical-align: top;
-  /* Align with the image */
+  margin-bottom: 1.5rem;
 }
 
-/* Arrow for speech bubble */
-.col-md-8.text-box.speech-bubble::before {
+.jump-to-section .section-links {
+  gap: 1rem; /* Added spacing between list items */
+}
+
+.jump-to-section .jump-link {
+  font-size: 1rem;
+  text-decoration: none;
+  color: #333;
+  padding: 0.5rem 1.2rem;
+  border: 1px solid #ddd;
+  border-radius: 30px;
+  transition: all 0.4s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.jump-to-section .jump-link:hover {
+  background-color: #e2e6ea;
+  border-color: #007bff;
+  color: #0056b3;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(-3px);
+}
+
+.jump-to-section .icon-circle {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  background-color: #fff;
+  color: #007bff;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 50%;
+  flex-shrink: 0;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.jump-to-section .jump-link:hover .icon-circle {
+  background-color: #007bff;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .jump-to-section .section-links {
+    align-items: center; /* Center align on smaller screens */
+  }
+}
+
+/* How Might We Help Users Section Styles */
+.how-might-we-help-section {
+  background-color: #222;
+  color: #fff;
+  padding: 5rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+/* Title Box */
+.how-might-we-help-section .title-box {
+  background-color: var(--secondary-color);
+  color: var(--text-light-color);
+  padding: 25px 0;
+  font-size: 2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.how-might-we-help-section .title-box h2 {
+  font-size: 2.3rem;
+}
+
+/* Content Text Box */
+.how-might-we-help-section .text-box p {
+  color: #f5f5f5;
+  line-height: 1.6;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.how-might-we-help-section .text-box .lead {
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+
+.how-might-we-help-section .text-box strong {
+  color: #00bfb6;
+}
+
+/* Image Box */
+.how-might-we-help-section .image-box {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.how-might-we-help-section .image-box .img-fluid {
+  width: 100%;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.how-might-we-help-section .image-box:hover .img-fluid {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.how-might-we-help-section .image-caption {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  padding: 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .how-might-we-help-section {
+    padding: 4rem 1.5rem;
+  }
+
+  .how-might-we-help-section .title-box h2 {
+    font-size: 1.8rem;
+  }
+
+  .how-might-we-help-section .text-box p {
+    font-size: 1rem;
+  }
+
+  .how-might-we-help-section .image-box .img-fluid {
+    border-radius: 10px;
+  }
+
+  .how-might-we-help-section .image-caption {
+    font-size: 1rem;
+    padding: 0.8rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .how-might-we-help-section .title-box h2 {
+    font-size: 1.6rem;
+  }
+
+  .how-might-we-help-section .image-box .img-fluid {
+    border-radius: 8px;
+  }
+}
+/* An Unexpected Issue Section Styles */
+#unexpected-issue {
+  background-color: #222;
+  color: #fff;
+  padding: 5rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+/* Title Box */
+#unexpected-issue .title-box {
+  background-color: var(--secondary-color);
+  color: var(--text-light-color);
+  padding: 25px 0;
+  font-size: 2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#unexpected-issue .title-box h2 {
+  font-size: 2.3rem;
+}
+#unexpected-issue .image-box {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  flex: 0 0 30%; /* Reduced the size to 30% */
+  margin-right: 20px; /* Keep some space between image and speech bubble */
+}
+
+#unexpected-issue .image-box .img-fluid {
+  width: 100%;
+  height: auto; /* Ensure the image is resized proportionally */
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+#unexpected-issue .image-box:hover .img-fluid {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Speech Bubble Styling */
+#unexpected-issue .speech-bubble {
+  position: relative;
+  background-color: #f8f9fa;
+  color: #333;
+  font-size: 1.15rem;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  font-weight: 400;
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  line-height: 1.5;
+  letter-spacing: 0.5px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#unexpected-issue .speech-bubble:hover {
+  transform: translateX(5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* Speech Bubble Arrow */
+#unexpected-issue .speech-bubble::before {
   content: "";
   width: 0;
   height: 0;
   position: absolute;
   border-left: 15px solid transparent;
-  border-right: 15px solid #00bfb6;
-  /* Same color as the bubble */
-  border-top: 15px solid #00bfb6;
+  border-right: 15px solid #f8f9fa;
+  border-top: 15px solid #f8f9fa;
   border-bottom: 15px solid transparent;
-  left: -10px;
-  /* Position the arrow */
+  left: -15px;
   top: 20px;
-  /* Align with the speech bubble */
 }
 
-@media (max-width: 992px) {
-  .col-md-8.text-box.speech-bubble {
-    max-width: 20%;
-    font-size: 0.9rem;
-  }
-
-  .playlist-image {
-    max-width: 300px;
-    /* Reduce size for tablets */
-  }
+/* Content Text Box */
+#unexpected-issue .text-box p {
+  color: #f5f5f5;
+  line-height: 1.6;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
 }
 
-@media (max-width: 576px) {
-  .col-md-8.text-box.speech-bubble {
-    max-width: 20%;
-    font-size: 0.8rem;
-    padding: 10px;
-  }
-
-  .playlist-image {
-    max-width: 200px;
-    /* Further reduce size for mobile */
-  }
+#unexpected-issue .text-box .lead {
+  font-weight: 500;
+  font-size: 1.2rem;
 }
 
-/* Speech Bubble on Mobile */
-@media (max-width: 768px) {
-  .col-md-8.text-box.speech-bubble {
-    font-size: 1rem;
-    /* Smaller text size for mobile */
-    max-width: 90%;
-    /* Allow speech bubble to fill more space */
-    padding: 12px;
-  }
-
-  /* Adjusting the title and description font size for better readability */
-  .Soulmusic-description h2 {
-    font-size: 1.75rem;
-    /* Slightly smaller heading */
-  }
-
-  .Soulmusic-description p {
-    font-size: 1rem;
-    /* Adjust paragraph text for mobile */
-  }
-
-  /* Center-align text in the speech bubble on smaller screens */
-  .col-md-8.text-box.speech-bubble {
-    text-align: left;
-    margin-left: 0;
-    margin-right: 10px;
-  }
-
-  /* Image adjustments for mobile */
-  .playlist-image {
-    max-width: 100%;
-    margin-top: 10px;
-  }
-
-  /* Adjust container for smaller screens */
-  .container-flex {
-    flex-direction: column;
-    gap: 20px;
-  }
-}
-
-/* Text Box */
-.text-box {
-  max-width: 100%;
-  padding: 15px;
-  margin: auto;
-  box-sizing: border-box;
-}
-
-.text-box p em {
-  display: inline-block;
-  font-size: 1rem;
-}
-
-/* Priority Revisions Section */
-.priority-revisions {
-  padding: 15px;
-  margin: 20px auto;
-  font-size: 1rem;
-}
-
-.priority-revisions h3 {
-  font-size: 1.5rem;
-}
-
-.priority-revisions ul li {
-  font-size: 1rem;
-}
-
-.priority-revisions ul li {
-  font-size: 1.125rem;
-  color: #666;
-  margin-bottom: 10px;
-}
-
-.priority-revisions ul li strong {
-  color: #333;
-}
-
-@media (max-width: 992px) {
-  .priority-revisions h3 {
-    font-size: 1.25rem;
-  }
-
-  .priority-revisions ul li {
-    font-size: 0.95rem;
-  }
-}
-
-@media (max-width: 576px) {
-  .priority-revisions h3 {
-    font-size: 1.1rem;
-  }
-
-  .priority-revisions ul li {
-    font-size: 0.85rem;
-  }
+#unexpected-issue .text-box strong {
+  color: #00bfb6;
 }
 
 /* Responsive Design */
-
-/* For Tablets (Max width 992px) */
-@media (max-width: 992px) {
-  .Soulmusic-description h2 {
-    font-size: 1.7rem;
+@media (max-width: 768px) {
+  #unexpected-issue {
+    padding: 4rem 1.5rem;
   }
 
-  .Soulmusic-description h3,
-  .Soulmusic-description h4 {
-    font-size: 1.3rem;
+  #unexpected-issue .title-box h2 {
+    font-size: 1.8rem;
   }
 
-  .Soulmusic-description p {
+  #unexpected-issue .text-box p {
     font-size: 1rem;
   }
 
-  .Soulmusic-image,
-  .Soulmusic-image-1,
-  .Soulmusic-image-2,
-  .Soulmusic-image-3 {
-    max-width: 100%;
-    margin-left: 10px;
+  #unexpected-issue .image-box .img-fluid {
+    border-radius: 10px;
   }
 
-  /* Adjust speech bubble position for tablets */
-  .col-md-8.text-box.speech-bubble {
-    max-width: 10%;
-    /* Make bubble a bit wider */
-    margin-left: 15px;
+  #unexpected-issue .speech-bubble {
+    font-size: 1rem;
+    padding: 0.8rem;
   }
 }
 
-/* For Mobile (Max width 576px) */
 @media (max-width: 576px) {
-  .Soulmusic-description h2 {
-    font-size: 1.5rem;
+  #unexpected-issue .title-box h2 {
+    font-size: 1.6rem;
   }
 
-  .Soulmusic-description h3,
-  .Soulmusic-description h4 {
+  #unexpected-issue .image-box .img-fluid {
+    border-radius: 8px;
+  }
+
+  #unexpected-issue .speech-bubble {
+    font-size: 1rem;
+    padding: 0.8rem;
+  }
+}
+
+/* Mood Playlists Section */
+#mood-playlists {
+  padding: 5rem 2rem;
+  background-color: #222;
+  color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+/* Title Box */
+#mood-playlists .title-box {
+  background-color: var(--secondary-color);
+  color: var(--text-light-color);
+  padding: 25px 0;
+  font-size: 2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#mood-playlists .title-box h2 {
+  font-size: 2.3rem;
+}
+
+/* Speech Bubble */
+#mood-playlists .speech-bubble {
+  font-size: 1.1rem;
+  font-style: italic;
+  position: relative;
+  margin-left: 20px;
+  margin-top: 20px; /* Adjusted for better positioning */
+}
+/* Speech Bubble Arrow */
+#mood-playlists .speech-bubble::before {
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  border-left: 15px solid transparent;
+  border-right: 15px solid #f8f9fa;
+  border-top: 15px solid #f8f9fa;
+  border-bottom: 15px solid transparent;
+  left: -15px;
+  top: 20px;
+}
+
+/* Image Box */
+#mood-playlists .image-box {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  flex: 0 0 15%; /* Reduced size to match the size of #unexpected-issue image */
+  margin-right: 20px;
+  margin-top: 20px; /* Adjusted for alignment */
+}
+
+#mood-playlists .image-box .img-fluid {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#mood-playlists .image-box:hover .img-fluid {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Original Mood Playlists Section Responsive */
+@media (max-width: 768px) {
+  #mood-playlists {
+    padding: 4rem 1.5rem;
+  }
+  
+  #mood-playlists .title-box h2 {
+    font-size: 1.8rem;
+  }
+  
+  #mood-playlists .image-box .img-fluid {
+    border-radius: 10px;
+  }
+  
+  #mood-playlists .image-caption {
+    font-size: 1rem;
+    padding: 0.8rem;
+  }
+  }
+  
+  @media (max-width: 576px) {
+  #mood-playlists .title-box h2 {
+    font-size: 1.6rem;
+  }
+  
+  #mood-playlists .image-box .img-fluid {
+    border-radius: 8px;
+  }
+  }
+  
+/* Priority Revisions */
+.priority-revisions {
+  margin-top: 3rem;
+  font-family: 'Arial', sans-serif;
+  color: #f8f9fa;
+}
+
+/* Section Title */
+.priority-revisions .section-title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: var(--primary-color);
+  text-transform: uppercase;
+  line-height: 1.4;
+}
+
+/* Lead Text */
+.priority-revisions .lead {
+  font-size: 1.1rem;
+  font-weight: 400;
+  margin-bottom: 2rem;
+  line-height: 1.6; /* Added line-height for better readability */
+}
+
+/* Revision Ideas */
+.revision-ideas {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Each Idea */
+.revision-item {
+  background-color: #333;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.revision-item h4.idea-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--secondary-color);
+  margin-bottom: 1rem;
+  line-height: 1.4; /* Line height for headers */
+}
+
+/* List Style */
+.list-style {
+  list-style: none;
+  padding-left: 0;
+}
+
+.list-style li {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  line-height: 1.5; /* Added line height for better readability */
+}
+
+.list-style li strong {
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  /* Priority Revisions */
+  .priority-revisions .section-title {
+    font-size: 1.8rem;
+  }
+
+  .priority-revisions .lead {
+    font-size: 1rem;
+  }
+
+  .revision-item h4.idea-title {
     font-size: 1.2rem;
   }
 
-  .Soulmusic-image,
-  .Soulmusic-image-1,
-  .Soulmusic-image-2,
-  .Soulmusic-image-3 {
-    max-width: 100%;
-    margin-left: 10px;
+  .list-style li {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .priority-revisions .section-title {
+    font-size: 1.6rem;
+  }
+}
+/* General Section Styling */
+.future-steps, .next-steps-section, .what-i-learned-section {
+  
+  background-color: #222; /* Set background color to #222 */
+  color: #fff; /* White text color for better contrast */
+  padding: 20px; /* Add padding to sections */
+  border-radius: 12px; /* Rounded corners for sections */
+}
+
+/* Future Steps Section Styling */
+.future-steps-title-box {
+  background-color: #333; /* Darker background for the title */
+  color: #fff; /* Light text color for readability */
+  padding: 25px 0;
+  font-size: 2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+/* Text Box Styling */
+.future-steps-text-box, .next-steps-text-box, .what-i-learned-text-box {
+  background-color: #2a2d32; /* Slightly lighter background for the text boxes */
+  color: #fff; /* Ensure text is white for contrast */
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  line-height: 1.6;
+  margin-top: 20px;
+  font-size: 1.1rem;
+}
+
+/* Adjust font sizes for readability */
+.future-steps-title-box h2 {
+  font-size: 2.3rem;
+}
+
+/* List Style */
+.list-style {
+  list-style: none;
+  padding-left: 0;
+}
+
+.list-style li {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.list-style li strong {
+  font-weight: 600;
+  color: #f9a825; /* Accent color for strong text */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .future-steps-title-box h2, .next-steps-text-box p, .what-i-learned-text-box p {
+    font-size: 1.8rem;
   }
 
-  /* Adjust speech bubble for mobile */
-  .col-md-8.text-box.speech-bubble {
-    max-width: 80%;
-    /* Bubble wider on small screens */
-    font-size: 0.95rem;
-    margin-left: 10px;
+  .future-steps-text-box p,
+  .next-steps-text-box p,
+  .what-i-learned-text-box p,
+  .list-style li {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .future-steps-title-box h2, .next-steps-text-box p, .what-i-learned-text-box p {
+    font-size: 1.6rem;
+  }
+
+  .future-steps-text-box p,
+  .next-steps-text-box p,
+  .what-i-learned-text-box p {
+    font-size: 1rem;
   }
 }
