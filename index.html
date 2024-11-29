@@ -19,7 +19,7 @@
     <div class="container-fluid">
       <!-- Logo -->
       <a class="navbar-brand" href="index.html">
-        <img src="images/Logo.png" alt="Logo" width="50" height="50">
+        <img src="Assets/Logo.png" alt="Logo" width="50" height="50">
       </a>
       <!-- Navbar Toggler Button (Default Bootstrap) -->
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -51,64 +51,63 @@
       </div>
     </div>
   </nav>
-
-  <!-- Intro Section -->
-  <div class="container text-center intro-section">
-    <div class="intro-text">
-      <h1>Hello! <br><span class="name">I'm Ananthu S.</span></h1>
-      <h2>Creative UI/UX Designer</h2>
-      <p>Let’s craft intuitive and engaging user experiences together.</p>
-    </div>
+<!-- Intro Section -->
+<div class="container text-center portfolio-intro-section">
+  <div class="portfolio-intro-text">
+    <h1>Hello! <br><span class="portfolio-name">I'm Ananthu S.</span></h1>
+    <h2>Creative UI/UX Designer</h2>
+    <p>Let’s craft intuitive and engaging user experiences together.</p>
   </div>
-
-  <!-- Project Section -->
-  <div class="container project-section">
-    <div class="row align-items-center">
-      <div class="col-lg-6 text-center">
-        <img src="images/Project image.png" alt="Soul Music AI Feature" class="img-fluid project-image">
-      </div>
-      <div class="col-lg-6">
-        <div class="project-card shadow-lg p-4 rounded">
-          <h2 class="project-title">Soul Music – AI-powered Personalized Playlist Feature</h2>
-          <div class="project-details">
-            <p class="project-heading text-primary">Problem:</p>
-            <p class="project-text">Users struggle to find music that matches their mood and enhances emotional well-being.</p>
-            <p class="project-heading text-primary">Solution:</p>
-            <p class="project-text">An AI-driven mood assessment feature that recommends playlists based on user emotions.</p>
-            <p class="project-heading text-primary">Outcome:</p>
-            <p class="project-text">Improved user engagement through personalized, mood-based music suggestions.</p>
-            <a href="soulmusic.html" class="cta-button btn btn-primary mt-4">View Case Study</a>
-          </div>
+</div>
+<!-- Soul Music Project Section -->
+<div class="container index-portfolio-project-section">
+  <div class="row align-items-center">
+    <div class="col-lg-6 text-center">
+      <img src="Assets/Project image.png" alt="Soul Music AI Feature" class="img-fluid index-project-image">
+    </div>
+    <div class="col-lg-6">
+      <div class="index-project-card shadow-lg p-4 rounded">
+        <h2 class="index-project-title">Soul Music – AI-powered Personalized Playlist Feature</h2>
+        <div class="index-project-details">
+          <p class="index-project-heading text-primary">Problem:</p>
+          <p class="index-project-text">Users struggle to find music that matches their mood and enhances emotional well-being.</p>
+          <p class="index-project-heading text-primary">Solution:</p>
+          <p class="index-project-text">An AI-driven mood assessment feature that recommends playlists based on user emotions.</p>
+          <p class="index-project-heading text-primary">Outcome:</p>
+          <p class="index-project-text">Improved user engagement through personalized, mood-based music suggestions.</p>
+          <a href="soulmusic.html" class="index-cta-button btn btn-primary mt-4">View Case Study</a>
         </div>
       </div>
     </div>
   </div>
+</div>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="footer-container">
-      <p>Thank you for your interest in my work, Let’s Connect</p>
-      <div class="footer-icons">
-        <a href="mailto:your-email@example.com"><i class="fa fa-envelope"></i></a>
-        <a href="https://www.linkedin.com/in/your-profile" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-      </div>
+
+ <!-- Footer -->
+ <footer class="footer">
+  <div class="footer-container">
+    <p>Thank you for your interest in my work, Let’s Connect</p>
+    <div class="footer-icons">
+      <a href="mailto:your-email@example.com"><i class="fa fa-envelope"></i></a>
+      <a href="https://www.linkedin.com/in/your-profile" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
     </div>
-  </footer>
+  </div>
+</footer>
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
-  <script>
-    document.addEventListener('click', function (event) {
-      const navbar = document.querySelector('.navbar-collapse');
-      const toggler = document.querySelector('.navbar-toggler');
-      const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+<script>
+  document.addEventListener('click', function (event) {
+    const navbar = document.querySelector('.navbar-collapse');
+    const toggler = document.querySelector('.navbar-toggler');
+    const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
 
-      if (!navbar.contains(event.target) && !toggler.contains(event.target) && !Array.from(navLinks).some(link => link.contains(event.target))) {
-        navbar.classList.remove('show');
-      }
-    });
-  </script>
+    if (!navbar.contains(event.target) && !toggler.contains(event.target) && !Array.from(navLinks).some(link => link.contains(event.target))) {
+      navbar.classList.remove('show');
+    }
+  });
+</script>
 </body>
 
 </html>

@@ -1,5 +1,7 @@
 /* General Styling */
+
 body {
+  height: 100%;
   background: linear-gradient(135deg, #000, #1a1a1a);
   color: var(--text-color);
   font-family: "Roboto", Arial, sans-serif;
@@ -9,8 +11,14 @@ body {
   overflow-x: hidden;
   font-weight: 400;
   font-size: 1rem;
-  overflow-x: hidden;
+}* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}* {
+  box-sizing: border-box;
 }
+
 /* Global fix for box-sizing */
 * {
   box-sizing: border-box;
@@ -137,77 +145,168 @@ button:active, .btn:active, .cta-button:active {
     font-size: 0.8rem;
   }
 }
-
 /* Intro Section */
-.intro-section {
- padding: 150px 100px 100px; /* Increase padding-top to move content down */
+.portfolio-intro-section {
+  padding: 150px 100px 100px; /* Increase padding-top to move content down */
   text-align: center;
   background: linear-gradient(145deg, #111, #222);
   box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.8);
+  position: relative; /* Ensures proper stacking context for any future absolute elements */
 }
 
-.intro-text {
+/* Intro Section Text */
+.portfolio-intro-text {
   max-width: 650px;
   margin: 0 auto;
+  padding: 0 20px; /* Added padding to prevent text from touching edges */
 }
 
-.intro-text h1 {
+.portfolio-intro-text h1 {
   font-size: 3.5rem;
   color: white;
   margin-bottom: 20px;
+  font-weight: 700; /* Stronger font-weight for emphasis */
 }
 
-.name {
-  color: #3498db;
+.portfolio-name {
+  color: #3498db; /* Portfolio name color */
   font-weight: 700;
 }
 
-.intro-text h2 {
+.portfolio-intro-text h2 {
   font-size: 2rem;
   color: #ddd;
   margin-bottom: 20px;
+  font-weight: 400; /* Slightly lighter weight for the secondary title */
 }
 
-.intro-text p {
+.portfolio-intro-text p {
   color: #bbb;
   font-size: 1.1rem;
+  line-height: 1.6; /* Added line-height for better readability */
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 /* Project Section */
-.project-section {
-  padding: 80px 0;
+.portfolio-project-section {
+  padding: 80px 20px; /* Adjusted padding to be more responsive */
+  background-color: #1a1a1a; /* Slightly darker background for the project section */
 }
 
-.project-card {
+.portfolio-project-card {
   width: 100%;
   background: #2d2d2d;
   box-sizing: border-box;
   border-radius: 10px;
+  padding: 20px;
   transition: transform 0.3s ease-in-out;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow for the cards */
 }
 
-.project-card:hover {
+.portfolio-project-card:hover {
   transform: scale(1.05);
 }
 
-.project-title {
+.portfolio-project-title {
   color: #fff;
   font-size: 2.2rem;
   margin-bottom: 15px;
+  font-weight: 700; /* Ensures the title stands out */
 }
 
-.project-details {
+.portfolio-project-details {
   color: #ddd;
   font-size: 1.1rem;
+  margin-bottom: 15px;
 }
 
-.project-heading {
+.portfolio-project-heading {
   font-weight: 600;
   margin-top: 20px;
 }
 
-.project-text {
+.portfolio-project-text {
   margin-bottom: 15px;
+  font-size: 1.1rem;
+  color: #bbb;
+  line-height: 1.6; /* Increased line height for better readability */
+}
+
+/* Responsive Design */
+
+/* Tablets and Small Laptops (Max-width: 768px) */
+@media (max-width: 768px) {
+  /* Intro Section */
+  .portfolio-intro-section {
+    padding: 100px 40px 60px; /* Reduced padding for smaller screens */
+  }
+
+  .portfolio-intro-text h1 {
+    font-size: 2.8rem; /* Slightly smaller for better fit */
+  }
+
+  .portfolio-intro-text h2 {
+    font-size: 1.8rem; /* Adjusted size for better fit */
+  }
+
+  .portfolio-intro-text p {
+    font-size: 1rem;
+  }
+
+  /* Project Section */
+  .portfolio-project-section {
+    padding: 60px 20px; /* Adjusted padding */
+  }
+
+  .portfolio-project-card {
+    padding: 15px;
+  }
+
+  .portfolio-project-title {
+    font-size: 1.8rem; /* Adjusted font size for smaller screens */
+  }
+
+  .portfolio-project-details {
+    font-size: 1rem;
+  }
+}
+
+/* Mobile Devices (Max-width: 576px) */
+@media (max-width: 576px) {
+  /* Intro Section */
+  .portfolio-intro-section {
+    padding: 80px 20px 40px; /* Further reduced padding for mobile */
+  }
+
+  .portfolio-intro-text h1 {
+    font-size: 2.2rem; /* Smaller font size for mobile */
+  }
+
+  .portfolio-intro-text h2 {
+    font-size: 1.6rem;
+  }
+
+  .portfolio-intro-text p {
+    font-size: 0.95rem; /* Slightly smaller text for mobile */
+  }
+
+  /* Project Section */
+  .portfolio-project-section {
+    padding: 40px 15px; /* Further reduced padding */
+  }
+
+  .portfolio-project-card {
+    padding: 10px;
+  }
+
+  .portfolio-project-title {
+    font-size: 1.6rem; /* Adjusted title size */
+  }
+
+  .portfolio-project-details {
+    font-size: 0.95rem; /* Smaller font for project details */
+  }
 }
 
 
@@ -292,51 +391,54 @@ button:active, .btn:active, .cta-button:active {
   }
 }
 
+/* Main Content for About Page */
 
-/* Main Content */
-.main-container {
+.about-main-container {
   margin-top: 50px;
-  padding: 0 15px;
+  padding: 0 1rem; /* Flexible padding */
   font-family: "Merriweather", serif;
   color: #333;
+  max-width: 1200px; /* Optional for larger screens */
+  margin: 50px auto;
 }
 
-/* Profile Section */
-.profile-section .row {
+/* Profile Section for About Page */
+.about-profile-section .row {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
-  align-items: center;
-  opacity: 0;
-  animation: fadeIn 1s ease-in-out forwards;
-  margin: 0;
-  padding: 30px; /* Prevent elements from touching edges */
-  align-items: flex-start; /* Align items to the top */
+  align-items: flex-start; /* Adjust alignment */
+  margin: 0 auto; /* Center content */
+  padding: 2rem 1rem; /* Flexible padding */
+  max-width: 100%; /* Prevent overflowing */
+  box-sizing: border-box;
 }
 
-/* Profile Image Styling */
-.profile-image {
+
+/* Profile Image Styling for About Page */
+.about-profile-image {
   width: 100%;
   max-width: 350px;
   height: auto;
   border-radius: 15px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  margin-bottom: 0;
-  padding-left: 80px;
+  margin: 0 auto; /* Center image */
+  padding: 0; /* Remove unnecessary padding */
 }
 
-.profile-image:hover {
+
+.about-profile-image:hover {
   transform: scale(1.05);
   box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
 }
 
-/* Intro Heading Styling */
-.intro-heading {
+/* Intro Heading Styling for About Page */
+.about-intro-heading {
   font-size: 3.5rem;
   font-family: "Playfair Display", serif;
-  color: #2c3e50;
+  color: #fff;
   margin-bottom: 1.5rem;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -364,8 +466,8 @@ button:active, .btn:active, .cta-button:active {
   color: #3498db;
 }
 
-/* Text Box Styling */
-.text-box {
+/* Text Box Styling for About Page */
+.about-text-box {
   text-align: left;
   padding: 20px;
 }
@@ -373,14 +475,15 @@ button:active, .btn:active, .cta-button:active {
 .about-description {
   background: linear-gradient(145deg, #111, #222);
   box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.8);
-  padding: 30px;
+  padding: 2rem;
   border-radius: 10px;
-  margin: 20px auto;
-  max-width: 90%;
+  margin: 1.5rem auto;
+  max-width: 90%; /* Prevent overflowing */
 }
 
+
 /* Make the "Before I became a UX/UI designer" text larger */
-.large-text {
+.about-large-text {
   font-size: 1.5rem;
   font-weight: 700;
   color: #3498db;
@@ -389,19 +492,35 @@ button:active, .btn:active, .cta-button:active {
 .about-description p {
   color: #fff;
   line-height: 1.8;
-  font-size: 1.1rem;
+  font-size: 1rem;
+  word-wrap: break-word; /* Break long words */
 }
 
 h1, p {
   margin-bottom: 1.5rem;
 }
 
-/* Strong Text Styling */
+/* Strong Text Styling for About Page */
 .about-description strong {
   color: #3498db;
   font-weight: 600;
   font-style: italic;
 }
+.about-intro-heading {
+  font-size: 3.5rem;
+  font-family: "Playfair Display", serif;
+  color: #fff;
+  margin: 1rem auto;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+  line-height: 1.2;
+  word-wrap: break-word;
+  word-break: break-word;
+  max-width: 90%; /* Prevent overflowing */
+  padding: 0;
+}
+
 
 /* Fade-In Animation */
 @keyframes fadeIn {
@@ -420,199 +539,455 @@ h1, p {
 
 /* Tablets (width between 768px and 1024px) */
 @media (max-width: 1024px) {
-  .intro-heading {
-    font-size: 3.5rem;
-    margin-bottom: 15px;
+  .about-intro-heading {
+    font-size: 2.8rem; /* Smaller font */
     text-align: center;
+    margin: 1rem auto;
   }
 
-  .profile-section .row {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .profile-image {
+  .about-profile-image {
     max-width: 280px;
   }
 
   .about-description {
-    padding: 30px;
-    font-size: 1.1rem;
-  }
-
-  .large-text {
-    font-size: 1.3rem;
+    font-size: 1rem; /* Adjust description size */
   }
 }
 
 /* Mobile Devices (width between 576px and 768px) */
 @media (max-width: 768px) {
-  .intro-heading {
-    font-size: 2.8rem;
-    text-align: center;
-    letter-spacing: 1px;
-    margin-bottom: 15px;
-    padding-left: 40px;
-  }
-
-  .profile-section .row {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .profile-image {
-    max-width: 250px;
-    padding-left: 45px;
-  }
-
-  .about-description {
-    padding: 25px;
-    font-size: 1rem;
-  }
-
-  .large-text {
-    font-size: 1.3rem;
-  }
-}
-
-/* Smaller Mobile Devices (width between 320px and 576px) */
-@media (max-width: 576px) {
-  .intro-heading {
+  .about-intro-heading {
     font-size: 2.2rem;
-    text-align: center;
-    margin-bottom: 1rem;
-    padding-left: 40px;
+    letter-spacing: 1px;
   }
 
-  .profile-section .row {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .profile-image {
+  .about-profile-image {
     max-width: 200px;
   }
 
   .about-description {
-    margin: 1rem auto;
-    padding: 20px;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  /* Main Container */
+  .about-main-container {
+    margin-top: 40px;
+    padding: 0 1rem; /* Reduce padding */
   }
 
-  .large-text {
-    font-size: 1.3rem;
+  /* Profile Section */
+  .about-profile-section .row {
+    flex-direction: column; /* Stack items vertically */
+    align-items: center;
+    gap: 15px; /* Reduce gap between items */
+    padding: 1rem; /* Compact padding */
+  }
+
+  /* Profile Image */
+  .about-profile-image {
+    max-width: 180px; /* Smaller image size */
+    padding: 0; /* Remove padding */
+    margin: 0 auto; /* Center image */
+  }
+
+  /* Intro Heading */
+  .about-intro-heading {
+    font-size: 2rem; /* Smaller font size */
+    letter-spacing: 0.5px; /* Reduce spacing */
+    margin-bottom: 1rem;
+    line-height: 1.3; /* Adjust line height */
+    padding: 0; /* Remove extra padding */
+  }
+
+  /* Description Box */
+  .about-description {
+    margin: 1rem auto; /* Adjust margins */
+    padding: 1rem; /* Compact padding */
+    font-size: 0.9rem; /* Smaller text size */
+    line-height: 1.6; /* Adjust line height */
   }
 
   .about-description p {
-    font-size: 0.9rem;
+    font-size: 0.85rem; /* Further reduce text size */
+  }
+
+  /* Large Text Highlight */
+  .about-large-text {
+    font-size: 1.2rem; /* Adjust size */
+  }
+
+  /* Strong Text Styling */
+  .about-description strong {
+    font-size: 1rem; /* Scale bold text */
+  }
+
+  /* Magnifier Hover Effect */
+  .hover-magnify {
+    transform: none; /* Remove scaling for smaller screens */
+    transition: none;
+  }
+
+  /* Adjust H1 and Paragraph Margins */
+  h1, p {
+    margin-bottom: 1rem; /* Compact spacing */
   }
 }
-/* Soulmusic Introduction Section Enhancements */
-/* Speech Bubble Styling */
-.soulmusic-introduction-section .speech-bubble {
-    position: relative;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    background-color: #f8f9fa;
-    color: #333;
-    font-style: italic;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
+
+/* Soul Music Project Section */
+.soulmusic-project-section {
+    padding: 4rem 1.5rem;
+    background-color: #fff;
+    border-radius: 15px;
+    margin-top: 3rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Prevent content overflow */
+}
+
+/* Image Styling */
+.soulmusic-project-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    margin: 0 auto;
+    display: block;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.soulmusic-introduction-section .speech-bubble:hover {
-    transform: translateX(5px);
+.soulmusic-project-image:hover {
+    transform: scale(1.05);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-.soulmusic-introduction-section .speech-bubble::before {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 30px;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 10px 10px 0 10px;
-    border-color: #f8f9fa transparent transparent transparent;
-}
-
-/* Playlist Image Styling */
-.soulmusic-introduction-section .playlist-image {
-    max-width: 100%;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+/* Card Styling */
+.soulmusic-project-card {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.soulmusic-introduction-section .playlist-image:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+.soulmusic-project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-/* General Layout Adjustments */
-.soulmusic-introduction-section {
-    background-color: #222;
-    color: #fff;
-    padding: 4rem 1.5rem;
-    border-radius: 12px;
-    margin-top: 50px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
-.soulmusic-introduction-section .title-box {
-    background-color: var(--secondary-color);
-    color: var(--text-light-color);
+/* Title Styling */
+.soulmusic-project-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 1.5rem;
     text-align: center;
-    padding: 25px 0;
-    font-size: 2rem;
+}
+
+/* Details Styling */
+.soulmusic-project-details {
+    color: #555;
+}
+
+.soulmusic-project-heading {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #007bff;
+    margin-bottom: 0.5rem;
+}
+
+.soulmusic-project-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    color: #666;
+}
+
+/* Button Styling */
+.cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1rem;
     font-weight: bold;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    border-radius: 10px;
-    margin-bottom: 2rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 6px;
+    background-color: #007bff;
+    color: #fff;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-decoration: none;
 }
 
-.soulmusic-introduction-section .title-box:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
-}
-
-/* Text Box Styling */
-.soulmusic-introduction-section .text-box p {
-    line-height: 1.6;
-    font-size: 1.1rem;
-    margin-bottom: 1.5rem;
-    color: #f5f5f5;
-}
-
-.soulmusic-introduction-section .text-box strong {
-    color: #00bfb6;
+.cta-button:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px);
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
-    .soulmusic-introduction-section .speech-bubble {
-        text-align: center;
-        margin-bottom: 15px;
+
+/* Tablets and Small Laptops */
+@media (max-width: 1024px) {
+    .soulmusic-project-section {
+        padding: 3rem 1rem;
     }
 
-    .soulmusic-introduction-section .text-box {
-        text-align: center;
-    }
-
-    .soulmusic-introduction-section .playlist-image {
-        max-width: 100%;
-        margin-top: 15px;
-    }
-
-    .soulmusic-introduction-section .title-box {
+    .soulmusic-project-title {
         font-size: 1.6rem;
     }
+
+    .soulmusic-project-heading {
+        font-size: 1.1rem;
+    }
+
+    .soulmusic-project-text {
+        font-size: 0.95rem;
+    }
+
+    .soulmusic-project-card {
+        padding: 1.5rem;
+    }
 }
+
+/* Mobile Devices (768px and below) */
+@media (max-width: 768px) {
+    .soulmusic-project-section .row {
+        flex-direction: column-reverse; /* Stack the content */
+        text-align: center;
+    }
+
+    .soulmusic-project-image {
+        margin-top: 20px;
+        max-width: 90%; /* Ensure image doesn't overflow */
+    }
+
+    .soulmusic-project-title {
+        font-size: 1.4rem;
+    }
+
+    .soulmusic-project-heading {
+        font-size: 1rem;
+    }
+
+    .soulmusic-project-text {
+        font-size: 0.9rem;
+    }
+
+    .cta-button {
+        font-size: 0.9rem;
+    }
+
+    .soulmusic-project-card {
+        padding: 1.2rem;
+    }
+}
+
+/* Extra Small Devices (576px and below) */
+@media (max-width: 576px) {
+    .soulmusic-project-section {
+        padding: 2rem 1rem;
+    }
+
+    .soulmusic-project-title {
+        font-size: 1.2rem;
+    }
+
+    .soulmusic-project-heading {
+        font-size: 0.95rem;
+    }
+
+    .soulmusic-project-text {
+        font-size: 0.85rem;
+    }
+
+    .cta-button {
+        font-size: 0.85rem;
+        padding: 8px 15px;
+    }
+
+    .soulmusic-project-card {
+        padding: 1rem;
+    }
+
+    .soulmusic-project-image {
+        margin: 0 auto;
+    }
+}
+/* Soul Music Project Section */
+.soulmusic-project-section {
+  padding: 4rem 1.5rem;
+  background-color: #000;
+  border-radius: 15px;
+  margin-top: 3rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Prevent content overflow */
+}
+
+/* Image Styling */
+.soulmusic-project-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  margin: 0 auto;
+  display: block;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.soulmusic-project-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Card Styling */
+.soulmusic-project-card {
+  background-color: #222;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.soulmusic-project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Title Styling */
+.soulmusic-project-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #1a9cf3;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* Details Styling */
+.soulmusic-project-details {
+  color: #555;
+}
+
+.soulmusic-project-heading {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #007bff;
+  margin-bottom: 0.5rem;
+}
+
+.soulmusic-project-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+/* Button Styling */
+.cta-button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 6px;
+  background-color: #007bff;
+  color: #fff;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  text-decoration: none;
+}
+
+.cta-button:hover {
+  background-color: #0056b3;
+  transform: translateY(-3px);
+}
+
+/* Responsive Design */
+
+/* Tablets and Small Laptops */
+@media (max-width: 1024px) {
+  .soulmusic-project-section {
+      padding: 3rem 1rem;
+  }
+
+  .soulmusic-project-title {
+      font-size: 1.6rem;
+  }
+
+  .soulmusic-project-heading {
+      font-size: 1.1rem;
+  }
+
+  .soulmusic-project-text {
+      font-size: 0.95rem;
+  }
+
+  .soulmusic-project-card {
+      padding: 1.5rem;
+  }
+}
+
+/* Mobile Devices (768px and below) */
+@media (max-width: 768px) {
+  .soulmusic-project-section .row {
+      flex-direction: column; /* Stack the image and card vertically */
+      text-align: center;
+  }
+
+  .soulmusic-project-image {
+      margin-bottom: 20px; /* Add spacing below the image */
+  }
+
+  .soulmusic-project-title {
+      font-size: 1.4rem;
+  }
+
+  .soulmusic-project-heading {
+      font-size: 1rem;
+  }
+
+  .soulmusic-project-text {
+      font-size: 0.9rem;
+  }
+
+  .cta-button {
+      font-size: 0.9rem;
+  }
+
+  .soulmusic-project-card {
+      padding: 1.2rem;
+  }
+}
+
+/* Extra Small Devices (576px and below) */
+@media (max-width: 576px) {
+  .soulmusic-project-section {
+      padding: 2rem 1rem;
+  }
+
+  .soulmusic-project-title {
+      font-size: 1.2rem;
+  }
+
+  .soulmusic-project-heading {
+      font-size: 0.95rem;
+  }
+
+  .soulmusic-project-text {
+      font-size: 0.85rem;
+  }
+
+  .cta-button {
+      font-size: 0.85rem;
+      padding: 8px 15px;
+  }
+
+  .soulmusic-project-card {
+      padding: 1rem;
+  }
+
+  .soulmusic-project-image {
+      margin: 0 auto 20px; /* Add spacing below the image */
+  }
+}
+
 
 .jump-to-section {
   padding: 2rem;
@@ -677,6 +1052,181 @@ h1, p {
   }
 }
 
+/* Soulmusic Introduction Section Enhancements */
+
+/* Speech Bubble Styling */
+.soulmusic-introduction-section .speech-bubble {
+  position: relative;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #f8f9fa;
+  color: #333;
+  font-style: italic;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex: 1;
+  max-width: 500px;
+  margin: 10px auto; /* Center and avoid overflow */
+  word-wrap: break-word; /* Handle long text gracefully */
+}
+
+.soulmusic-introduction-section .speech-bubble:hover {
+  transform: translateX(5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.soulmusic-introduction-section .speech-bubble::before {
+  content: '';
+  position: absolute;
+  top: 20px; /* Adjusts the vertical position of the tail */
+  left: -10px; /* Positions the tail outside the left side */
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px 10px 10px 0; /* Adjusts the triangle shape */
+  border-color: transparent #f8f9fa transparent transparent; /* Sets the left side as visible */
+}
+
+/* Playlist Image Styling */
+.soulmusic-introduction-section .playlist-image {
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin: 0 auto; /* Center images */
+  display: block; /* Ensures consistent alignment */
+}
+
+.soulmusic-introduction-section .playlist-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* General Layout Adjustments */
+.soulmusic-introduction-section {
+  background-color: #222;
+  color: #fff;
+  padding: 4rem 1.5rem;
+  border-radius: 12px;
+  margin-top: 50px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  overflow: hidden; /* Prevent content from overflowing */
+}
+
+/* Title Box Styling */
+.soulmusic-introduction-section .title-box {
+  background-color: var(--secondary-color);
+  color: var(--text-light-color);
+  text-align: center;
+  padding: 25px 1rem;
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 10px;
+  margin: 0 auto 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 100%;
+}
+
+.soulmusic-introduction-section .title-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+}
+
+/* Text Box Styling */
+.soulmusic-introduction-section .text-box p {
+  line-height: 1.6;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  color: #f5f5f5;
+  text-align: justify; /* Improve readability */
+  word-wrap: break-word;
+}
+
+.soulmusic-introduction-section .text-box strong {
+  color: #00bfb6;
+}
+
+/* Responsive Design */
+
+/* Tablets and Small Laptops */
+@media (max-width: 1024px) {
+  .soulmusic-introduction-section {
+      padding: 3rem 1rem;
+  }
+
+  .soulmusic-introduction-section .title-box {
+      font-size: 1.8rem;
+      padding: 20px 1rem;
+  }
+
+  .soulmusic-introduction-section .speech-bubble {
+      max-width: 400px;
+  }
+}
+
+/* Mobile Devices (Width between 576px and 768px) */
+@media (max-width: 768px) {
+  .soulmusic-introduction-section {
+      padding: 2.5rem 1rem;
+  }
+
+  .soulmusic-introduction-section .title-box {
+      font-size: 1.6rem;
+  }
+
+  .soulmusic-introduction-section .speech-bubble {
+      margin-bottom: 20px;
+      max-width: 350px;
+  }
+
+  .soulmusic-introduction-section .playlist-image {
+      margin: 20px auto;
+  }
+
+  .soulmusic-introduction-section .text-box p {
+      font-size: 1rem;
+  }
+
+  /* Stack content vertically on smaller screens */
+  .soulmusic-introduction-section .d-flex {
+      flex-direction: column; /* Stack image and speech bubble */
+  }
+}
+
+/* Small Mobile Devices (Width up to 576px) */
+@media (max-width: 576px) {
+  .soulmusic-introduction-section {
+      padding: 2rem 1rem;
+  }
+
+  .soulmusic-introduction-section .title-box {
+      font-size: 1.4rem;
+      padding: 15px;
+  }
+
+  .soulmusic-introduction-section .speech-bubble {
+      margin-bottom: 15px;
+      max-width: 300px;
+  }
+
+  .soulmusic-introduction-section .playlist-image {
+      max-width: 80%; /* Scales with the viewport */
+      margin: 15px auto;
+  }
+
+  .soulmusic-introduction-section .text-box p {
+      font-size: 0.95rem;
+  }
+
+  /* Stack content vertically on small screens */
+  .soulmusic-introduction-section .d-flex {
+      flex-direction: column; /* Stack image and speech bubble */
+  }
+}
 /* How Might We Help Users Section Styles */
 .how-might-we-help-section {
   background-color: #222;
@@ -754,6 +1304,8 @@ h1, p {
 }
 
 /* Responsive Design */
+
+/* Tablets and Small Laptops (Max-width: 768px) */
 @media (max-width: 768px) {
   .how-might-we-help-section {
     padding: 4rem 1.5rem;
@@ -775,15 +1327,39 @@ h1, p {
     font-size: 1rem;
     padding: 0.8rem;
   }
+
+  /* Stack content vertically on tablets */
+  .how-might-we-help-section .d-flex {
+    flex-direction: column; /* Stack text and image vertically */
+  }
 }
 
+/* Small Mobile Devices (Max-width: 576px) */
 @media (max-width: 576px) {
+  .how-might-we-help-section {
+    padding: 3rem 1rem; /* Less padding for small screens */
+  }
+
   .how-might-we-help-section .title-box h2 {
-    font-size: 1.6rem;
+    font-size: 1.6rem; /* Adjust font size for small screens */
+  }
+
+  .how-might-we-help-section .text-box p {
+    font-size: 0.95rem; /* Slightly smaller font for mobile */
   }
 
   .how-might-we-help-section .image-box .img-fluid {
-    border-radius: 8px;
+    border-radius: 8px; /* Slightly reduced border radius for small screens */
+  }
+
+  .how-might-we-help-section .image-caption {
+    font-size: 1rem;
+    padding: 0.8rem;
+  }
+
+  /* Stack content vertically on small screens */
+  .how-might-we-help-section .d-flex {
+    flex-direction: column; /* Stack text and image vertically */
   }
 }
 /* An Unexpected Issue Section Styles */
@@ -813,6 +1389,8 @@ h1, p {
 #unexpected-issue .title-box h2 {
   font-size: 2.3rem;
 }
+
+/* Image Box */
 #unexpected-issue .image-box {
   position: relative;
   border-radius: 10px;
@@ -827,7 +1405,6 @@ h1, p {
   border-radius: 10px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 
 #unexpected-issue .image-box:hover .img-fluid {
   transform: scale(1.05);
@@ -858,16 +1435,15 @@ h1, p {
 
 /* Speech Bubble Arrow */
 #unexpected-issue .speech-bubble::before {
-  content: "";
+  content: '';
+  position: absolute;
+  top: 20px; /* Adjusts the vertical position of the tail */
+  left: -10px; /* Positions the tail outside the left side */
   width: 0;
   height: 0;
-  position: absolute;
-  border-left: 15px solid transparent;
-  border-right: 15px solid #f8f9fa;
-  border-top: 15px solid #f8f9fa;
-  border-bottom: 15px solid transparent;
-  left: -15px;
-  top: 20px;
+  border-style: solid;
+  border-width: 10px 10px 10px 0; /* Adjusts the triangle shape */
+  border-color: transparent #f8f9fa transparent transparent; /* Sets the left side as visible */
 }
 
 /* Content Text Box */
@@ -888,6 +1464,8 @@ h1, p {
 }
 
 /* Responsive Design */
+
+/* Tablets and Small Laptops (Max-width: 768px) */
 @media (max-width: 768px) {
   #unexpected-issue {
     padding: 4rem 1.5rem;
@@ -909,8 +1487,20 @@ h1, p {
     font-size: 1rem;
     padding: 0.8rem;
   }
+
+  /* Stack content vertically on tablets */
+  #unexpected-issue .d-flex {
+    flex-direction: column; /* Stack text and image vertically */
+  }
+
+  #unexpected-issue .image-box {
+    flex: 0 0 100%; /* Ensure the image takes full width */
+    margin-right: 0; /* Remove margin on small screens */
+    margin-bottom: 1.5rem; /* Add space between image and speech bubble */
+  }
 }
 
+/* Small Mobile Devices (Max-width: 576px) */
 @media (max-width: 576px) {
   #unexpected-issue .title-box h2 {
     font-size: 1.6rem;
@@ -924,8 +1514,18 @@ h1, p {
     font-size: 1rem;
     padding: 0.8rem;
   }
-}
 
+  /* Stack content vertically on small screens */
+  #unexpected-issue .d-flex {
+    flex-direction: column; /* Stack text and image vertically */
+  }
+
+  #unexpected-issue .image-box {
+    flex: 0 0 100%; /* Full width image for mobile */
+    margin-right: 0; /* Remove margin */
+    margin-bottom: 1rem; /* Space between image and speech bubble */
+  }
+}
 /* Mood Playlists Section */
 #mood-playlists {
   padding: 5rem 2rem;
@@ -934,6 +1534,9 @@ h1, p {
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Title Box */
@@ -961,19 +1564,20 @@ h1, p {
   position: relative;
   margin-left: 20px;
   margin-top: 20px; /* Adjusted for better positioning */
+  line-height: 1.6;
 }
+
 /* Speech Bubble Arrow */
 #mood-playlists .speech-bubble::before {
-  content: "";
+  content: '';
+  position: absolute;
+  top: 20px; /* Adjusts the vertical position of the tail */
+  left: -10px; /* Positions the tail outside the left side */
   width: 0;
   height: 0;
-  position: absolute;
-  border-left: 15px solid transparent;
-  border-right: 15px solid #f8f9fa;
-  border-top: 15px solid #f8f9fa;
-  border-bottom: 15px solid transparent;
-  left: -15px;
-  top: 20px;
+  border-style: solid;
+  border-width: 10px 10px 10px 0; /* Adjusts the triangle shape */
+  border-color: transparent #f8f9fa transparent transparent; /* Sets the left side as visible */
 }
 
 /* Image Box */
@@ -998,41 +1602,66 @@ h1, p {
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Original Mood Playlists Section Responsive */
+/* Responsive Design */
+
+/* Tablets and Small Laptops (Max-width: 768px) */
 @media (max-width: 768px) {
   #mood-playlists {
     padding: 4rem 1.5rem;
+    flex-direction: column; /* Stack the content vertically on tablets */
   }
-  
+
   #mood-playlists .title-box h2 {
     font-size: 1.8rem;
   }
-  
-  #mood-playlists .image-box .img-fluid {
-    border-radius: 10px;
+
+  #mood-playlists .text-box p {
+    font-size: 1rem;
   }
-  
-  #mood-playlists .image-caption {
+
+  #mood-playlists .image-box {
+    flex: 0 0 80%; /* Image takes up 80% width on tablets */
+    margin-right: 0;
+    margin-bottom: 1.5rem;
+  }
+
+  #mood-playlists .speech-bubble {
     font-size: 1rem;
     padding: 0.8rem;
+    margin-left: 0;
+    text-align: center;
   }
-  }
-  
-  @media (max-width: 576px) {
+}
+
+/* Small Mobile Devices (Max-width: 576px) */
+@media (max-width: 576px) {
   #mood-playlists .title-box h2 {
     font-size: 1.6rem;
   }
-  
+
   #mood-playlists .image-box .img-fluid {
     border-radius: 8px;
   }
+
+  #mood-playlists .speech-bubble {
+    font-size: 1rem;
+    padding: 0.8rem;
+    margin-left: 0;
   }
-  
+
+  #mood-playlists .image-box {
+    flex: 0 0 100%; /* Full width image on small screens */
+    margin-right: 0;
+    margin-bottom: 1rem; /* Space between image and speech bubble */
+  }
+}
+
 /* Priority Revisions */
 .priority-revisions {
   margin-top: 3rem;
   font-family: 'Arial', sans-serif;
   color: #f8f9fa;
+  padding: 2rem 1rem; /* Added padding for better spacing */
 }
 
 /* Section Title */
@@ -1066,6 +1695,12 @@ h1, p {
   border-radius: 8px;
   padding: 1.5rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.revision-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
 .revision-item h4.idea-title {
@@ -1094,8 +1729,9 @@ h1, p {
 }
 
 /* Responsive Design */
+
+/* Tablets and Small Laptops (Max-width: 768px) */
 @media (max-width: 768px) {
-  /* Priority Revisions */
   .priority-revisions .section-title {
     font-size: 1.8rem;
   }
@@ -1111,20 +1747,43 @@ h1, p {
   .list-style li {
     font-size: 1rem;
   }
+
+  .revision-ideas {
+    gap: 1.5rem; /* Reduced gap for better spacing on smaller screens */
+  }
 }
 
+/* Small Mobile Devices (Max-width: 576px) */
 @media (max-width: 576px) {
   .priority-revisions .section-title {
     font-size: 1.6rem;
   }
+
+  .priority-revisions .lead {
+    font-size: 1rem;
+    margin-bottom: 1.5rem; /* Adjusted margin for smaller screens */
+  }
+
+  .revision-item h4.idea-title {
+    font-size: 1.1rem;
+  }
+
+  .list-style li {
+    font-size: 1rem;
+  }
+
+  .revision-ideas {
+    gap: 1rem; /* Adjust gap for small screens */
+  }
 }
 /* General Section Styling */
 .future-steps, .next-steps-section, .what-i-learned-section {
-  
   background-color: #222; /* Set background color to #222 */
   color: #fff; /* White text color for better contrast */
-  padding: 20px; /* Add padding to sections */
+  padding: 20px 15px; /* Add padding to sections, with adjusted horizontal padding */
   border-radius: 12px; /* Rounded corners for sections */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  margin-bottom: 2rem; /* Space between sections */
 }
 
 /* Future Steps Section Styling */
@@ -1140,6 +1799,68 @@ h1, p {
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   text-align: center;
+}
+
+.future-steps-title-box h2 {
+  font-size: 2.3rem; /* Larger size for the section title */
+}
+
+/* Combined Section */
+.combined-section {
+  background-color: #222; /* Dark background */
+  color: #f8f9fa; /* Light text for readability */
+  border: 1px solid #444; /* Subtle border for structure */
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  font-family: 'Arial', sans-serif;
+  line-height: 1.8;
+}
+
+/* Section Titles */
+.section-title {
+  color: var(--primary-color); /* Dynamic primary color */
+  font-size: 1.6em;
+  margin-bottom: 15px;
+  border-bottom: 2px solid var(--primary-color); /* Underline effect */
+  padding-bottom: 5px;
+}
+
+/* Subtitles (e.g., Next Steps, Metrics to Track) */
+.subtitle {
+  color: #00bfb6; /* Bright teal */
+  font-size: 1.2em;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+/* Paragraph Styling */
+.combined-section p {
+  margin-bottom: 20px;
+  font-size: 1.1rem; /* Slightly larger text for readability */
+  line-height: 1.6;
+}
+
+/* List Styling */
+.combined-section ul {
+  padding-left: 20px; /* Indented list */
+  list-style: none;
+}
+
+.combined-section ul li {
+  margin-bottom: 10px;
+  position: relative;
+  font-size: 1rem; /* Font size for list items */
+  line-height: 1.5;
+}
+
+.combined-section ul li::before {
+  content: '•'; /* Classic bullet */
+  color: #00bfb6; /* Matches subtitle color */
+  font-size: 1.5em;
+  position: absolute;
+  left: -20px;
+  top: 0;
 }
 
 /* Text Box Styling */
@@ -1177,6 +1898,8 @@ h1, p {
 }
 
 /* Responsive Design */
+
+/* Tablets and Small Laptops (Max-width: 768px) */
 @media (max-width: 768px) {
   .future-steps-title-box h2, .next-steps-text-box p, .what-i-learned-text-box p {
     font-size: 1.8rem;
@@ -1188,8 +1911,13 @@ h1, p {
   .list-style li {
     font-size: 1rem;
   }
+
+  .future-steps, .next-steps-section, .what-i-learned-section {
+    padding: 15px; /* Reduced padding for smaller screens */
+  }
 }
 
+/* Small Mobile Devices (Max-width: 576px) */
 @media (max-width: 576px) {
   .future-steps-title-box h2, .next-steps-text-box p, .what-i-learned-text-box p {
     font-size: 1.6rem;
@@ -1198,6 +1926,15 @@ h1, p {
   .future-steps-text-box p,
   .next-steps-text-box p,
   .what-i-learned-text-box p {
+    font-size: 1rem;
+  }
+
+  .combined-section,
+  .future-steps, .next-steps-section, .what-i-learned-section {
+    padding: 12px; /* Further reduced padding for very small screens */
+  }
+
+  .list-style li {
     font-size: 1rem;
   }
 }
