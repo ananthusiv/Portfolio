@@ -97,7 +97,7 @@ button:active, .btn:active, .cta-button:active {
   left: 0;
   width: 100%;
   z-index: 1030;
-  background-color: #000;
+  background-color: #222;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
@@ -147,7 +147,8 @@ button:active, .btn:active, .cta-button:active {
 }
 /* Intro Section */
 .portfolio-intro-section {
-  padding: 150px 100px 100px; /* Increase padding-top to move content down */
+  margin-top: 100px;
+  padding: 220px 100px 100px; /* Increase padding-top to move content down */
   text-align: center;
   background: linear-gradient(145deg, #111, #222);
   box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.8);
@@ -401,22 +402,20 @@ button:active, .btn:active, .cta-button:active {
   max-width: 1200px; /* Optional for larger screens */
   margin: 50px auto;
 }
-
 /* Profile Section for About Page */
 .about-profile-section .row {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: center; /* Center items horizontally */
+  align-items: center; /* Align items vertically */
   gap: 20px;
-  align-items: flex-start; /* Adjust alignment */
-  margin: 0 auto; /* Center content */
-  padding: 2rem 1rem; /* Flexible padding */
-  max-width: 100%; /* Prevent overflowing */
+  padding: 2rem 1rem;
+  max-width: 100%;
   box-sizing: border-box;
+  
 }
 
-
-/* Profile Image Styling for About Page */
+/* Profile Image Styling */
 .about-profile-image {
   width: 100%;
   max-width: 350px;
@@ -424,10 +423,10 @@ button:active, .btn:active, .cta-button:active {
   border-radius: 15px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  margin: 0 auto; /* Center image */
-  padding: 0; /* Remove unnecessary padding */
+  margin: 0 auto; /* Center image horizontally */
+  padding: 40px 0 0 60px;
+  align-self: flex-start; /* Align image to the top */
 }
-
 
 .about-profile-image:hover {
   transform: scale(1.05);
@@ -439,7 +438,7 @@ button:active, .btn:active, .cta-button:active {
   font-size: 3.5rem;
   font-family: "Playfair Display", serif;
   color: #fff;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   text-transform: uppercase;
   letter-spacing: 2px;
   display: flex;
@@ -451,7 +450,7 @@ button:active, .btn:active, .cta-button:active {
   text-align: center;
   line-height: 1.2;
   max-width: 100%;
-  padding-left: 80px;
+  
 }
 
 /* Magnifier Hover Effect on Each Word */
@@ -466,10 +465,13 @@ button:active, .btn:active, .cta-button:active {
   color: #3498db;
 }
 
-/* Text Box Styling for About Page */
+/* Adjust the padding for the description to match the image's vertical alignment */
 .about-text-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center the text vertically */
   text-align: left;
-  padding: 20px;
+  padding: 0 20px; /* Adjust padding to align text */
 }
 
 .about-description {
@@ -506,20 +508,6 @@ h1, p {
   font-weight: 600;
   font-style: italic;
 }
-.about-intro-heading {
-  font-size: 3.5rem;
-  font-family: "Playfair Display", serif;
-  color: #fff;
-  margin: 1rem auto;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  text-align: center;
-  line-height: 1.2;
-  word-wrap: break-word;
-  word-break: break-word;
-  max-width: 90%; /* Prevent overflowing */
-  padding: 0;
-}
 
 
 /* Fade-In Animation */
@@ -536,105 +524,44 @@ h1, p {
 }
 
 /* Media Queries */
-
-/* Tablets (width between 768px and 1024px) */
 @media (max-width: 1024px) {
   .about-intro-heading {
-    font-size: 2.8rem; /* Smaller font */
-    text-align: center;
-    margin: 1rem auto;
+    font-size: 2.8rem;
   }
-
   .about-profile-image {
-    max-width: 280px;
-  }
-
-  .about-description {
-    font-size: 1rem; /* Adjust description size */
+    max-width: 100%;
   }
 }
 
-/* Mobile Devices (width between 576px and 768px) */
 @media (max-width: 768px) {
-  .about-intro-heading {
-    font-size: 2.2rem;
-    letter-spacing: 1px;
+  .about-profile-section .row {
+    flex-direction: column; /* Stack elements vertically on smaller screens */
+    align-items: center;
   }
-
+  
   .about-profile-image {
-    max-width: 200px;
+    max-width: 250px; /* Adjust image size */
   }
-
-  .about-description {
-    font-size: 0.9rem;
-    padding: 1.5rem;
+  .about-intro-heading {
+    text-align: left; /* Align text to the left */
+    padding-left: 50px; /* Add padding to left for better alignment */
   }
 }
 
 @media (max-width: 576px) {
-  /* Main Container */
-  .about-main-container {
-    margin-top: 40px;
-    padding: 0 1rem; /* Reduce padding */
-  }
-
-  /* Profile Section */
-  .about-profile-section .row {
-    flex-direction: column; /* Stack items vertically */
-    align-items: center;
-    gap: 15px; /* Reduce gap between items */
-    padding: 1rem; /* Compact padding */
-  }
-
-  /* Profile Image */
+  /* Move image and heading to the left */
   .about-profile-image {
-    max-width: 180px; /* Smaller image size */
-    padding: 0; /* Remove padding */
-    margin: 0 auto; /* Center image */
+    max-width: 200px;
+    margin-left: 0; /* Align image to the left */
+    margin-right: auto; /* Ensure it aligns left if there’s extra space */
   }
-
-  /* Intro Heading */
   .about-intro-heading {
-    font-size: 2rem; /* Smaller font size */
-    letter-spacing: 0.5px; /* Reduce spacing */
-    margin-bottom: 1rem;
-    line-height: 1.3; /* Adjust line height */
-    padding: 0; /* Remove extra padding */
-  }
-
-  /* Description Box */
-  .about-description {
-    margin: 1rem auto; /* Adjust margins */
-    padding: 1rem; /* Compact padding */
-    font-size: 0.9rem; /* Smaller text size */
-    line-height: 1.6; /* Adjust line height */
-  }
-
-  .about-description p {
-    font-size: 0.85rem; /* Further reduce text size */
-  }
-
-  /* Large Text Highlight */
-  .about-large-text {
-    font-size: 1.2rem; /* Adjust size */
-  }
-
-  /* Strong Text Styling */
-  .about-description strong {
-    font-size: 1rem; /* Scale bold text */
-  }
-
-  /* Magnifier Hover Effect */
-  .hover-magnify {
-    transform: none; /* Remove scaling for smaller screens */
-    transition: none;
-  }
-
-  /* Adjust H1 and Paragraph Margins */
-  h1, p {
-    margin-bottom: 1rem; /* Compact spacing */
+    font-size: 2rem;
+    text-align: left; /* Align text to the left */
   }
 }
+
+
 
 /* Soul Music Project Section */
 .soulmusic-project-section {
