@@ -55,7 +55,6 @@
   <!-- Bootstrap JS and Popper (included once) -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
-
   <script>
     // Function to load HTML files dynamically
     function loadHTML(file, elementId, callback) {
@@ -63,65 +62,66 @@
         .then(response => response.text())
         .then(data => {
           document.getElementById(elementId).innerHTML = data;
-          if (callback) callback();  // Ensure the callback is executed after loading HTML
+          if (callback) callback(); // Ensure the callback is executed after loading HTML
         })
-        .catch(error => console.error('Error loading file:', error));
+        .catch(error => console.error("Error loading file:", error));
     }
   
     // Function to set active link
     function setActiveLink() {
       // Get the current page name (e.g., "index.html")
-      const currentPage = window.location.pathname.split('/').pop();
+      let currentPage = window.location.pathname.split("/").pop();
+      if (currentPage === "") currentPage = "index.html"; // Default to "index.html" for root URL
   
       // Mapping of pages to navbar links
       const links = {
-        'about.html': 'about-link',
-        'index.html': 'work-link', // Make sure the ID 'work-link' exists in your navbar
-        'resume.html': 'resume-link', // Example for resume, ensure the link ID matches
-        'mailto': 'contact-link', // For the contact email link
-        'linkedin': 'linkedin-link', // For the LinkedIn link
+        "about.html": "about-link",
+        "index.html": "work-link", // Corresponds to the Work link
+        "mailto:ananthsiv15@gmail.com": "contact-link", // Email link
+        "https://www.linkedin.com/in/-ananthus/": "linkedin-link", // LinkedIn link
       };
   
       // Reset all links by removing the 'active' class
       Object.values(links).forEach(linkId => {
         const link = document.getElementById(linkId);
-        if (link) link.classList.remove('active');
+        if (link) link.classList.remove("active");
       });
   
-      // Loop through the pages and add the 'active' class to the matching link
+      // Add the 'active' class to the matching link
       for (const [page, linkId] of Object.entries(links)) {
         if (currentPage === page || currentPage.includes(page)) {
           const activeLink = document.getElementById(linkId);
-          if (activeLink) activeLink.classList.add('active');
+          if (activeLink) activeLink.classList.add("active");
         }
       }
     }
   
     // Function to close the navbar on small screens when clicking outside
     function closeNavbarOnClickOutside() {
-      const navbar = document.querySelector('.navbar-collapse'); // Get the navbar collapse element
-      const navbarToggler = document.querySelector('.navbar-toggler'); // Get the navbar toggler button
-      
+      const navbar = document.querySelector(".navbar-collapse"); // Get the navbar collapse element
+      const navbarToggler = document.querySelector(".navbar-toggler"); // Get the navbar toggler button
+  
       // Add event listener to the document
-      document.addEventListener('click', function(event) {
+      document.addEventListener("click", function (event) {
         // Check if the click is outside the navbar or the toggler button
         if (!navbar.contains(event.target) && !navbarToggler.contains(event.target)) {
           // Close the navbar by removing the 'show' class
-          navbar.classList.remove('show');
+          navbar.classList.remove("show");
         }
       });
     }
   
     // Load Navbar and Footer, and set active link after both are loaded
-    window.onload = function() {
-      loadHTML('navbar.html', 'navbar-container', function() {
-        loadHTML('footer.html', 'footer-container', function() {
-          setActiveLink();  // Ensure the active link is set after both navbar and footer are loaded
-          closeNavbarOnClickOutside();  // Close navbar on click outside
+    window.onload = function () {
+      loadHTML("navbar.html", "navbar-container", function () {
+        loadHTML("footer.html", "footer-container", function () {
+          setActiveLink(); // Ensure the active link is set after both navbar and footer are loaded
+          closeNavbarOnClickOutside(); // Close navbar on click outside
         });
       });
     };
   </script>
+  
   
 
 </body>
