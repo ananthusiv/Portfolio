@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- SEO Meta Tags -->
-  <meta name="description" content="Portfolio of Ananthu S, UX/UI Designer">
-  <meta name="keywords" content="Portfolio, UX/UI Design, Web Development, Science Tutor">
+  <meta name="description" content="Portfolio of Ananthu S, UI/UX Designer">
+  <meta name="keywords" content="Portfolio, UI/UX Design, Web Development, Science Tutor">
   <meta name="author" content="Ananthu S">
 
   <title>Portfolio</title>
@@ -28,43 +28,7 @@
 
 <body>
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg">
-    <div class="container-fluid">
-      <!-- Logo -->
-      <a class="navbar-brand" href="index.html">
-        <img src="Assets/Logo.png" alt="Logo" width="50" height="50">
-      </a>
-      <!-- Navbar Toggler Button (Custom Hamburger Menu) -->
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      
-      <!-- Navbar Links -->
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link active" href="about.html">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="index.html">Work</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="resume.html">Resume</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="mailto:ananthsiv15@gmail.com">
-              <i class="fa fa-envelope"></i>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="https://www.linkedin.com/in/-ananthus/" aria-label="LinkedIn" target="_blank">
-              <i class="fa-brands fa-linkedin"></i>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+  <div id="navbar-container"></div>
 
 <!-- Main Content Container for About Page -->
 <div class="about-main-container">
@@ -84,10 +48,10 @@
   </div>
   
   <!-- About Description Section -->
-  <section class="about-description fade-in">
+  <section class="about-description">
 
       <p>
-        <span class="about-large-text">Before I became a UX/UI designer,</span> I spent a few years tutoring science subjects.
+        <span class="about-large-text">Before I became a UI/UX designer,</span> I spent a few years tutoring science subjects.
           As a freelance home tutor, I enjoyed working one-on-one with high school and higher secondary students,
           helping them grasp complex concepts in physics and other sciences. I found great satisfaction in
           developing personalized lesson plans that catered to each student’s unique learning style. It taught me
@@ -97,20 +61,20 @@
           difficult concepts. Think hands-on experiments and real-world applications. Seeing students improve
           their problem-solving skills reinforced my passion for simplifying complexity.
           <br><br>
-          <strong>Design entered my scene recently, after a formal course in UX/UI.</strong><br><br>
+          <strong>Design entered my scene recently, after a formal course in UI/UX.</strong><br>
           
           I’ve always had a curiosity for technology, which led me to web development and, later, user-centered
           design. Through my journey with Figma and responsive design projects, I learned to craft intuitive,
           accessible interfaces that focus on the user's needs and preferences. This hands-on experience allowed
           me to apply both creative and analytical thinking, similar to my tutoring days but in a digital space.
           <br><br>
-          <strong>Why UX/UI design?</strong>
-          <br><br>
-          UX/UI design allows me to improve how people interact with digital products. My background in tutoring
+          <strong>Why UI/UX design?</strong>
+          <br>
+          UI/UX design allows me to improve how people interact with digital products. My background in tutoring
           equipped me with empathy, while my technical skills enable me to craft solutions that make digital
           experiences smoother and more engaging. I’m excited to collaborate with designers and developers alike,
           building interfaces that truly empower users.
-          <br><br>
+          <br>
           Moving forward, I’m excited to collaborate with other designers and developers to create thoughtful,
           user-friendly interfaces that engage and empower users.
       </p>
@@ -118,37 +82,52 @@
 </div>
 
 
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-container">
-            <p>Thank you for your interest in my work, Let’s Connect</p>
-            <div class="footer-icons">
-                <a href="mailto:ananthsiv15@gmail.com" aria-label="Email">
-                    <i class="fa fa-envelope"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/-ananthus/" aria-label="LinkedIn" target="_blank">
-                    <i class="fa-brands fa-linkedin"></i>
-                </a>
-            </div>
-        </div>
-    </footer>
+  <!-- Footer -->
+  <div id="footer-container"></div>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
     <script>
-     document.addEventListener('click', function(event) {
-    const navbar = document.querySelector('.navbar-collapse');
-    const toggler = document.querySelector('.navbar-toggler');
-    const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+      // Function to load HTML files dynamically
+      function loadHTML(file, elementId) {
+        fetch(file)
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById(elementId).innerHTML = data;
+            setActiveLink();  // Add this line to set the active link
+          })
+          .catch(error => console.error('Error loading file:', error));
+      }
     
-    if (!navbar.contains(event.target) && !toggler.contains(event.target) && !Array.from(navLinks).some(link => link.contains(event.target))) {
-        navbar.classList.remove('show');
-    }
-});
-
+      // Function to set active link
+      function setActiveLink() {
+        const currentPage = window.location.pathname.split('/').pop();
+        const links = {
+          'about.html': 'about-link',
+          'index.html': 'work-link',
+          'resume': 'resume-link', // Example, ensure the link ID matches
+          'mailto': 'contact-link', // Ensure the link ID matches for email
+          'linkedin': 'linkedin-link', // Ensure the link ID matches for LinkedIn
+        };
+    
+        // Reset all links
+        Object.values(links).forEach(linkId => {
+          const link = document.getElementById(linkId);
+          if (link) link.classList.remove('active');
+        });
+    
+        // Add 'active' class to the current page's link
+        for (const [page, linkId] of Object.entries(links)) {
+          if (currentPage === page || currentPage.includes(page)) {
+            const activeLink = document.getElementById(linkId);
+            if (activeLink) activeLink.classList.add('active');
+          }
+        }
+      }
+    
+      // Load Navbar and Footer
+      loadHTML('navbar.html', 'navbar-container');
+      loadHTML('footer.html', 'footer-container');
     </script>
-</body>
-
-</html>
+    

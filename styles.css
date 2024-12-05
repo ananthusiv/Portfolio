@@ -396,22 +396,10 @@ button:active, .btn:active, .cta-button:active {
 
 .about-main-container {
   margin-top: 50px;
-  padding: 0; /* Flexible padding */
+  padding:30px; /* Flexible padding */
   font-family: "Merriweather", serif;
   color: #333;
-  max-width: 1200px; /* Optional for larger screens */
-  margin: 50px auto;
-}
-/* Profile Section for About Page */
-.about-profile-section .row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center; /* Center items horizontally */
-  align-items: center; /* Align items vertically */
-  gap: 20px;
-  padding: 2rem 1rem;
-  max-width: 100%;
-  box-sizing: border-box;
+  max-width:100%; /* Optional for larger screens */
   
 }
 
@@ -424,7 +412,7 @@ button:active, .btn:active, .cta-button:active {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   margin: 0 auto; /* Center image horizontally */
-  padding: 40px 0 0 60px;
+  padding-top:40px ;
   align-self: flex-start; /* Align image to the top */
 }
 
@@ -479,8 +467,7 @@ button:active, .btn:active, .cta-button:active {
   box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.8);
   padding: 0;
   border-radius: 10px;
-  margin: 1.5rem auto;
-  max-width: 90%; /* Prevent overflowing */
+  max-width: 100%; /* Prevent overflowing */
 }
 
 
@@ -496,10 +483,7 @@ button:active, .btn:active, .cta-button:active {
   line-height: 1.8;
   font-size: 1rem;
   word-wrap: break-word; /* Break long words */
-}
 
-h1, p {
-  margin-bottom: 1.5rem;
 }
 
 /* Strong Text Styling for About Page */
@@ -531,6 +515,9 @@ h1, p {
   .about-profile-image {
     max-width: 100%;
   }
+  .about-description{
+    max-width: 100%;
+  }
 }
 
 @media (max-width: 768px) {
@@ -541,10 +528,15 @@ h1, p {
   
   .about-profile-image {
     max-width: 250px; /* Adjust image size */
+    padding-left: 20px;
   }
   .about-intro-heading {
     text-align: left; /* Align text to the left */
     padding-left: 50px; /* Add padding to left for better alignment */
+  }
+  .about-description{
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }
 
