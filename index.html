@@ -56,46 +56,53 @@
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
   <script>
-    // Function to load HTML files dynamically
-    function loadHTML(file, elementId) {
-      fetch(file)
-        .then(response => response.text())
-        .then(data => {
-          document.getElementById(elementId).innerHTML = data;
-          setActiveLink();  // Add this line to set the active link
-        })
-        .catch(error => console.error('Error loading file:', error));
+   // Function to load HTML files dynamically
+function loadHTML(file, elementId) {
+  fetch(file)
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById(elementId).innerHTML = data;
+      setActiveLink();  // Call this function after loading the content to set the active link
+    })
+    .catch(error => console.error('Error loading file:', error));
+}
+
+// Function to set active link
+function setActiveLink() {
+  // Get the current page name (e.g., "index.html")
+  const currentPage = window.location.pathname.split('/').pop();
+
+  // Mapping of pages to navbar links
+  const links = {
+    'about.html': 'about-link',
+    'index.html': 'work-link',
+    'resume.html': 'resume-link', // Example for resume, ensure the link ID matches
+    'mailto': 'contact-link', // For the contact email link
+    'linkedin': 'linkedin-link', // For the LinkedIn link
+  };
+
+  // Reset all links by removing the 'active' class
+  Object.values(links).forEach(linkId => {
+    const link = document.getElementById(linkId);
+    if (link) link.classList.remove('active');
+  });
+
+  // Loop through the pages and add the 'active' class to the matching link
+  for (const [page, linkId] of Object.entries(links)) {
+    if (currentPage === page || currentPage.includes(page)) {
+      const activeLink = document.getElementById(linkId);
+      if (activeLink) activeLink.classList.add('active');
     }
-  
-    // Function to set active link
-    function setActiveLink() {
-      const currentPage = window.location.pathname.split('/').pop();
-      const links = {
-        'about.html': 'about-link',
-        'index.html': 'work-link',
-        'resume': 'resume-link', // Example, ensure the link ID matches
-        'mailto': 'contact-link', // Ensure the link ID matches for email
-        'linkedin': 'linkedin-link', // Ensure the link ID matches for LinkedIn
-      };
-  
-      // Reset all links
-      Object.values(links).forEach(linkId => {
-        const link = document.getElementById(linkId);
-        if (link) link.classList.remove('active');
-      });
-  
-      // Add 'active' class to the current page's link
-      for (const [page, linkId] of Object.entries(links)) {
-        if (currentPage === page || currentPage.includes(page)) {
-          const activeLink = document.getElementById(linkId);
-          if (activeLink) activeLink.classList.add('active');
-        }
-      }
-    }
-  
-    // Load Navbar and Footer
-    loadHTML('navbar.html', 'navbar-container');
-    loadHTML('footer.html', 'footer-container');
+  }
+}
+
+// Load Navbar and Footer, and set active link immediately after loading
+window.onload = function() {
+  loadHTML('navbar.html', 'navbar-container');
+  loadHTML('footer.html', 'footer-container');
+  setActiveLink(); // Ensure the active link is set when the page loads
+};
+
   </script>
 </body>
 
