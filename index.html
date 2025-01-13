@@ -1,129 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang=en>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio</title>
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Playfair+Display:wght@400;700&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<meta charset=UTF-8>
+<meta name=viewport content="width=device-width, initial-scale=1.0">
+<title>Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Playfair+Display:wght@400;700&family=Roboto+Slab:wght@400;700&display=swap" rel=stylesheet>
+<link href=https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css rel=stylesheet>
+<link rel=stylesheet href=styles.css>
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css>
 </head>
-
 <body>
-  <!-- Navbar -->
-  <div id="navbar-container"></div>
-
-  <!-- Intro Section -->
-  <div class="container text-center portfolio-intro-section">
-    <div class="portfolio-intro-text">
-      <h1>Hello! <br><span class="portfolio-name">I'm Ananthu S.</span></h1>
-      <h2>Creative UI/UX Designer</h2>
-      <p>Let’s craft intuitive and engaging user experiences together.</p>
-    </div>
-  </div>
-
-  <!-- Soul Music Project Section -->
-  <div class="container index-portfolio-project-section">
-    <div class="row align-items-center" style="padding: 10px;">
-      <div class="col-lg-6 text-center">
-        <img src="Assets/Project image.png" alt="Soul Music AI Feature" class="img-fluid index-project-image">
-      </div>
-      <div class="col-lg-6">
-        <div class="index-project-card shadow-lg p-4 rounded">
-          <h2 class="index-project-title">Soul Music – AI-powered Personalized Playlist Feature</h2>
-          <div class="index-project-details">
-            <p class="index-project-heading text-primary">Problem:</p>
-            <p class="index-project-text">Users struggle to find music that matches their mood and enhances emotional well-being.</p>
-            <p class="index-project-heading text-primary">Solution:</p>
-            <p class="index-project-text">An AI-driven mood assessment feature that recommends playlists based on user emotions.</p>
-            <p class="index-project-heading text-primary">Outcome:</p>
-            <p class="index-project-text">Improved user engagement through personalized, mood-based music suggestions.</p>
-            <a href="soulmusic.html" class="index-cta-button btn btn-primary mt-4">View Case Study</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Footer -->
-  <div id="footer-container"></div>
-
-  <!-- Bootstrap JS and Popper (included once) -->
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
-  <script>
-    // Function to load HTML files dynamically
-    function loadHTML(file, elementId, callback) {
-      fetch(file)
-        .then(response => response.text())
-        .then(data => {
-          document.getElementById(elementId).innerHTML = data;
-          if (callback) callback(); // Ensure the callback is executed after loading HTML
-        })
-        .catch(error => console.error("Error loading file:", error));
-    }
-  
-    // Function to set active link
-    function setActiveLink() {
-      // Get the current page name (e.g., "index.html")
-      let currentPage = window.location.pathname.split("/").pop();
-      if (currentPage === "") currentPage = "index.html"; // Default to "index.html" for root URL
-  
-      // Mapping of pages to navbar links
-      const links = {
-        "about.html": "about-link",
-        "index.html": "work-link", // Corresponds to the Work link
-        "mailto:ananthsiv15@gmail.com": "contact-link", // Email link
-        "https://www.linkedin.com/in/-ananthus/": "linkedin-link", // LinkedIn link
-      };
-  
-      // Reset all links by removing the 'active' class
-      Object.values(links).forEach(linkId => {
-        const link = document.getElementById(linkId);
-        if (link) link.classList.remove("active");
-      });
-  
-      // Add the 'active' class to the matching link
-      for (const [page, linkId] of Object.entries(links)) {
-        if (currentPage === page || currentPage.includes(page)) {
-          const activeLink = document.getElementById(linkId);
-          if (activeLink) activeLink.classList.add("active");
-        }
-      }
-    }
-  
-    // Function to close the navbar on small screens when clicking outside
-    function closeNavbarOnClickOutside() {
-      const navbar = document.querySelector(".navbar-collapse"); // Get the navbar collapse element
-      const navbarToggler = document.querySelector(".navbar-toggler"); // Get the navbar toggler button
-  
-      // Add event listener to the document
-      document.addEventListener("click", function (event) {
-        // Check if the click is outside the navbar or the toggler button
-        if (!navbar.contains(event.target) && !navbarToggler.contains(event.target)) {
-          // Close the navbar by removing the 'show' class
-          navbar.classList.remove("show");
-        }
-      });
-    }
-  
-    // Load Navbar and Footer, and set active link after both are loaded
-    window.onload = function () {
-      loadHTML("navbar.html", "navbar-container", function () {
-        loadHTML("footer.html", "footer-container", function () {
-          setActiveLink(); // Ensure the active link is set after both navbar and footer are loaded
-          closeNavbarOnClickOutside(); // Close navbar on click outside
-        });
-      });
-    };
-  </script>
-  
-  
-
+<div id=navbar-container></div>
+<div class="container text-center portfolio-intro-section">
+<div class=portfolio-intro-text>
+<h1>Hello! <br><span class=portfolio-name>I'm Ananthu S.</span></h1>
+<h2>Creative UI/UX Designer</h2>
+<p>Let’s craft intuitive and engaging user experiences together.</p>
+</div>
+</div>
+<section class="container index-portfolio-project-section">
+<div class="row justify-content-center">
+<div class="col-lg-4 col-md-6 mb-4">
+<div class=index-project-card-container>
+<div id=card1 class=index-project-card>
+<div class=project-image-container>
+<img src="Assets/Project image.png" alt="Soul Music AI Feature" class="img-fluid index-project-image">
+</div>
+<h2 class=index-project-title-front>
+<i class="fas fa-music"></i> Soul Music – AI-powered Personalized Playlist Feature
+</h2>
+<div class=card-back>
+<h2 class=index-project-title-back>
+<i class="fas fa-music"></i> Soul Music – AI-powered Personalized Playlist Feature
+</h2>
+<p class=index-project-text-back>
+<strong style=color:#3498db>Problem:</strong> Users have difficulty finding music that suits their mood and boosts emotional well-being.
+</p>
+<p class=index-project-text-back>
+<strong style=color:#3498db>Solution:</strong> An AI-powered mood assessment feature that suggests playlists based on user emotions.
+</p>
+<p class=index-project-text-back>
+<strong style=color:#3498db>Outcome:</strong> Enhanced user engagement with personalized, mood-based music recommendations.
+</p>
+</div>
+<a id=arrowButton href=soulmusic.html class=arrow-button>
+<i class="fas fa-arrow-left"></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div id=footer-container></div>
+<script src=https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js></script>
+<script src=https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js></script>
+<script>function loadHTML(file,elementId,callback){fetch(file).then(response=>response.text()).then(data=>{document.getElementById(elementId).innerHTML=data;if(callback)callback();}).catch(error=>console.error("Error loading file:",error));}
+function setActiveLink(){let currentPage=window.location.pathname.split("/").pop();if(currentPage==="")currentPage="index.html";const links={"about.html":"about-link","index.html":"work-link","mailto:ananthsiv15@gmail.com":"contact-link","https://www.linkedin.com/in/-ananthus/":"linkedin-link",};Object.values(links).forEach(linkId=>{const link=document.getElementById(linkId);if(link)link.classList.remove("active");});for(const[page,linkId]of Object.entries(links)){if(currentPage===page||currentPage.includes(page)){const activeLink=document.getElementById(linkId);if(activeLink)activeLink.classList.add("active");}}}
+function closeNavbarOnClickOutside(){const navbar=document.querySelector(".navbar-collapse");const navbarToggler=document.querySelector(".navbar-toggler");document.addEventListener("click",function(event){if(!navbar.contains(event.target)&&!navbarToggler.contains(event.target)){navbar.classList.remove("show");}});}
+window.onload=function(){loadHTML("navbar.html","navbar-container",function(){loadHTML("footer.html","footer-container",function(){setActiveLink();closeNavbarOnClickOutside();});});};document.addEventListener('DOMContentLoaded',function(){const card=document.querySelector('#card1');const arrowButton=document.querySelector('#arrowButton');card.addEventListener('transitionend',function(){if(card.style.transform==='rotateY(180deg)'){arrowButton.style.display='block';}else{arrowButton.style.display='none';}});card.addEventListener('mouseenter',function(){card.style.transform='rotateY(180deg)';});card.addEventListener('mouseleave',function(){card.style.transform='rotateY(0deg)';});});</script>
 </body>
-
 </html>
