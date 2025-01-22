@@ -1,0 +1,1032 @@
+
+.soulmusic-project-section {
+    padding: 4rem 1.5rem;
+    background-color: #fff;
+    border-radius: 15px;
+    margin-top: 3rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  .soulmusic-project-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    margin: 0 auto;
+    display: block;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .soulmusic-project-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  .soulmusic-project-card {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .soulmusic-project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  .soulmusic-project-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  .soulmusic-project-details {
+    color: #555;
+  }
+  .soulmusic-project-heading {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #007bff;
+    margin-bottom: 0.5rem;
+  }
+  .soulmusic-project-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    color: #666;
+  }
+  .cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 6px;
+    background-color: #007bff;
+    color: #fff;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-decoration: none;
+  }
+  .cta-button:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px);
+  }
+  @media (max-width: 1024px) {
+    .soulmusic-project-section {
+      padding: 3rem 1rem;
+    }
+    .soulmusic-project-title {
+      font-size: 1.6rem;
+    }
+    .soulmusic-project-heading {
+      font-size: 1.1rem;
+    }
+    .soulmusic-project-text {
+      font-size: 0.95rem;
+    }
+    .soulmusic-project-card {
+      padding: 1.5rem;
+    }
+  }
+  @media (max-width: 768px) {
+    .soulmusic-project-section .row {
+      flex-direction: column-reverse;
+      text-align: center;
+    }
+    .soulmusic-project-image {
+      margin-top: 20px;
+      max-width: 90%;
+    }
+    .soulmusic-project-title {
+      font-size: 1.4rem;
+    }
+    .soulmusic-project-heading {
+      font-size: 1rem;
+    }
+    .soulmusic-project-text {
+      font-size: 0.9rem;
+    }
+    .cta-button {
+      font-size: 0.9rem;
+    }
+    .soulmusic-project-card {
+      padding: 1.2rem;
+    }
+  }
+  @media (max-width: 576px) {
+    .soulmusic-project-section {
+      padding: 2rem 1rem;
+    }
+    .soulmusic-project-title {
+      font-size: 1.2rem;
+    }
+    .soulmusic-project-heading {
+      font-size: 0.95rem;
+    }
+    .soulmusic-project-text {
+      font-size: 0.85rem;
+    }
+    .cta-button {
+      font-size: 0.85rem;
+      padding: 8px 15px;
+    }
+    .soulmusic-project-card {
+      padding: 1rem;
+    }
+    .soulmusic-project-image {
+      margin: 0 auto;
+    }
+  }
+  .soulmusic-project-section {
+    padding: 4rem 1.5rem;
+    background-color: #000;
+    border-radius: 15px;
+    margin-top: 3rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  .soulmusic-project-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    margin: 0 auto;
+    display: block;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .soulmusic-project-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  .soulmusic-project-card {
+    background-color: #222;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .soulmusic-project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  .soulmusic-project-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #1a9cf3;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  .soulmusic-project-details {
+    color: #555;
+  }
+  .soulmusic-project-heading {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #007bff;
+    margin-bottom: 0.5rem;
+  }
+  .soulmusic-project-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    color: #fff;
+  }
+  .cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 6px;
+    background-color: #007bff;
+    color: #fff;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-decoration: none;
+  }
+  .cta-button:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px);
+  }
+  @media (max-width: 1024px) {
+    .soulmusic-project-section {
+      padding: 3rem 1rem;
+    }
+    .soulmusic-project-title {
+      font-size: 1.6rem;
+    }
+    .soulmusic-project-heading {
+      font-size: 1.1rem;
+    }
+    .soulmusic-project-text {
+      font-size: 0.95rem;
+    }
+    .soulmusic-project-card {
+      padding: 1.5rem;
+    }
+  }
+  @media (max-width: 768px) {
+    .soulmusic-project-section .row {
+      flex-direction: column;
+      text-align: center;
+    }
+    .soulmusic-project-image {
+      margin-bottom: 20px;
+    }
+    .soulmusic-project-title {
+      font-size: 1.4rem;
+    }
+    .soulmusic-project-heading {
+      font-size: 1rem;
+    }
+    .soulmusic-project-text {
+      font-size: 0.9rem;
+    }
+    .cta-button {
+      font-size: 0.9rem;
+    }
+    .soulmusic-project-card {
+      padding: 1.2rem;
+    }
+  }
+  @media (max-width: 576px) {
+    .soulmusic-project-section {
+      padding: 2rem 1rem;
+    }
+    .soulmusic-project-title {
+      font-size: 1.2rem;
+    }
+    .soulmusic-project-heading {
+      font-size: 0.95rem;
+    }
+    .soulmusic-project-text {
+      font-size: 0.85rem;
+    }
+    .cta-button {
+      font-size: 0.85rem;
+      padding: 8px 15px;
+    }
+    .soulmusic-project-card {
+      padding: 1rem;
+    }
+    .soulmusic-project-image {
+      margin: 0 auto 20px;
+    }
+  }
+  .jump-to-section {
+    padding: 2rem;
+    background-color: #2f3133;
+    border-radius: 12px;
+  }
+  .jump-to-section .title-box {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 1.5rem;
+  }
+  .jump-to-section .section-links {
+    gap: 1rem;
+  }
+  .jump-to-section .jump-link {
+    font-size: 1rem;
+    text-decoration: none;
+    color: #333;
+    padding: 0.5rem 1.2rem;
+    border: 1px solid #ddd;
+    border-radius: 30px;
+    transition: all 0.4s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+  }
+  .jump-to-section .jump-link:hover {
+    background-color: #e2e6ea;
+    border-color: #007bff;
+    color: #0056b3;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-3px);
+  }
+  .jump-to-section .icon-circle {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 2.2rem;
+    height: 2.2rem;
+    background-color: #fff;
+    color: #007bff;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 50%;
+    flex-shrink: 0;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  .jump-to-section .jump-link:hover .icon-circle {
+    background-color: #007bff;
+    color: #fff;
+  }
+  @media (max-width: 768px) {
+    .jump-to-section .section-links {
+      align-items: center;
+    }
+  }
+  .soulmusic-introduction-section .speech-bubble {
+    position: relative;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #f8f9fa;
+    color: #333;
+    font-style: italic;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex: 1;
+    max-width: 500px;
+    margin: 10px auto;
+    word-wrap: break-word;
+  }
+  .soulmusic-introduction-section .speech-bubble:hover {
+    transform: translateX(5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  .soulmusic-introduction-section .speech-bubble::before {
+    content: "";
+    position: absolute;
+    top: 20px;
+    left: -10px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent #f8f9fa transparent transparent;
+  }
+  .soulmusic-introduction-section .playlist-image {
+    max-width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 0 auto;
+    display: block;
+  }
+  .soulmusic-introduction-section .playlist-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+  .soulmusic-introduction-section {
+    background-color: #222;
+    color: #fff;
+    padding: 4rem 1.5rem;
+    border-radius: 12px;
+    margin-top: 50px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+  }
+  .soulmusic-introduction-section .title-box {
+    background-color: var(--secondary-color);
+    color: var(--text-light-color);
+    text-align: center;
+    padding: 25px 1rem;
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 10px;
+    margin: 0 auto 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 100%;
+  }
+  .soulmusic-introduction-section .title-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+  }
+  .soulmusic-introduction-section .text-box p {
+    line-height: 1.6;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    color: #f5f5f5;
+    text-align: justify;
+    word-wrap: break-word;
+  }
+  .soulmusic-introduction-section .text-box strong {
+    color: #00bfb6;
+  }
+  @media (max-width: 1024px) {
+    .soulmusic-introduction-section {
+      padding: 3rem 1rem;
+    }
+    .soulmusic-introduction-section .title-box {
+      font-size: 1.8rem;
+      padding: 20px 1rem;
+    }
+    .soulmusic-introduction-section .speech-bubble {
+      max-width: 400px;
+    }
+  }
+  @media (max-width: 768px) {
+    .soulmusic-introduction-section {
+      padding: 2.5rem 1rem;
+    }
+    .soulmusic-introduction-section .title-box {
+      font-size: 1.6rem;
+    }
+    .soulmusic-introduction-section .speech-bubble {
+      margin-bottom: 20px;
+      max-width: 350px;
+    }
+    .soulmusic-introduction-section .playlist-image {
+      margin: 20px auto;
+    }
+    .soulmusic-introduction-section .text-box p {
+      font-size: 1rem;
+    }
+    .soulmusic-introduction-section .d-flex {
+      flex-direction: column;
+    }
+  }
+  @media (max-width: 576px) {
+    .soulmusic-introduction-section {
+      padding: 2rem 1rem;
+    }
+    .soulmusic-introduction-section .title-box {
+      font-size: 1.4rem;
+      padding: 15px;
+    }
+    .soulmusic-introduction-section .speech-bubble {
+      margin-bottom: 15px;
+      max-width: 300px;
+    }
+    .soulmusic-introduction-section .playlist-image {
+      max-width: 80%;
+      margin: 15px auto;
+    }
+    .soulmusic-introduction-section .text-box p {
+      font-size: 0.95rem;
+    }
+    .soulmusic-introduction-section .d-flex {
+      flex-direction: column;
+    }
+  }
+  .how-might-we-help-section {
+    background-color: #222;
+    color: #fff;
+    padding: 5rem 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    text-align: center;
+  }
+  .how-might-we-help-section .title-box {
+    background-color: var(--secondary-color);
+    color: var(--text-light-color);
+    padding: 25px 0;
+    font-size: 2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  .how-might-we-help-section .title-box h2 {
+    font-size: 2.3rem;
+  }
+  .how-might-we-help-section .text-box p {
+    color: #f5f5f5;
+    line-height: 1.6;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+  }
+  .how-might-we-help-section .text-box .lead {
+    font-weight: 500;
+    font-size: 1.2rem;
+  }
+  .how-might-we-help-section .text-box strong {
+    color: #00bfb6;
+  }
+  .how-might-we-help-section .image-box {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .how-might-we-help-section .image-box .img-fluid {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .how-might-we-help-section .image-box:hover .img-fluid {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  }
+  .how-might-we-help-section .image-caption {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    padding: 1rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  @media (max-width: 768px) {
+    .how-might-we-help-section {
+      padding: 4rem 1.5rem;
+    }
+    .how-might-we-help-section .title-box h2 {
+      font-size: 1.8rem;
+    }
+    .how-might-we-help-section .text-box p {
+      font-size: 1rem;
+    }
+    .how-might-we-help-section .image-box .img-fluid {
+      border-radius: 10px;
+    }
+    .how-might-we-help-section .image-caption {
+      font-size: 1rem;
+      padding: 0.8rem;
+    }
+    .how-might-we-help-section .d-flex {
+      flex-direction: column;
+    }
+  }
+  @media (max-width: 576px) {
+    .how-might-we-help-section {
+      padding: 3rem 1rem;
+    }
+    .how-might-we-help-section .title-box h2 {
+      font-size: 1.6rem;
+    }
+    .how-might-we-help-section .text-box p {
+      font-size: 0.95rem;
+    }
+    .how-might-we-help-section .image-box .img-fluid {
+      border-radius: 8px;
+    }
+    .how-might-we-help-section .image-caption {
+      font-size: 1rem;
+      padding: 0.8rem;
+    }
+    .how-might-we-help-section .d-flex {
+      flex-direction: column;
+    }
+  }
+  #unexpected-issue {
+    background-color: #222;
+    color: #fff;
+    padding: 5rem 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    text-align: center;
+  }
+  #unexpected-issue .title-box {
+    background-color: var(--secondary-color);
+    color: var(--text-light-color);
+    padding: 25px 0;
+    font-size: 2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  #unexpected-issue .title-box h2 {
+    font-size: 2.3rem;
+  }
+  #unexpected-issue .image-box {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    flex: 0 0 30%;
+    margin-right: 20px;
+  }
+  #unexpected-issue .image-box .img-fluid {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  #unexpected-issue .image-box:hover .img-fluid {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  }
+  #unexpected-issue .speech-bubble {
+    position: relative;
+    background-color: #f8f9fa;
+    color: #333;
+    font-size: 1.15rem;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-weight: 400;
+    font-family: "Arial", sans-serif;
+    text-align: center;
+    line-height: 1.5;
+    letter-spacing: 0.5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  #unexpected-issue .speech-bubble:hover {
+    transform: translateX(5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.25);
+  }
+  #unexpected-issue .speech-bubble::before {
+    content: "";
+    position: absolute;
+    top: 20px;
+    left: -10px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent #f8f9fa transparent transparent;
+  }
+  #unexpected-issue .text-box p {
+    color: #f5f5f5;
+    line-height: 1.6;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+  }
+  #unexpected-issue .text-box .lead {
+    font-weight: 500;
+    font-size: 1.2rem;
+  }
+  #unexpected-issue .text-box strong {
+    color: #00bfb6;
+  }
+  @media (max-width: 768px) {
+    #unexpected-issue {
+      padding: 4rem 1.5rem;
+    }
+    #unexpected-issue .title-box h2 {
+      font-size: 1.8rem;
+    }
+    #unexpected-issue .text-box p {
+      font-size: 1rem;
+    }
+    #unexpected-issue .image-box .img-fluid {
+      border-radius: 10px;
+    }
+    #unexpected-issue .speech-bubble {
+      font-size: 1rem;
+      padding: 0.8rem;
+    }
+    #unexpected-issue .d-flex {
+      flex-direction: column;
+    }
+    #unexpected-issue .image-box {
+      flex: 0 0 100%;
+      margin-right: 0;
+      margin-bottom: 1.5rem;
+    }
+  }
+  @media (max-width: 576px) {
+    #unexpected-issue .title-box h2 {
+      font-size: 1.6rem;
+    }
+    #unexpected-issue .image-box .img-fluid {
+      border-radius: 8px;
+    }
+    #unexpected-issue .speech-bubble {
+      font-size: 1rem;
+      padding: 0.8rem;
+    }
+    #unexpected-issue .d-flex {
+      flex-direction: column;
+    }
+    #unexpected-issue .image-box {
+      flex: 0 0 100%;
+      margin-right: 0;
+      margin-bottom: 1rem;
+    }
+  }
+  #mood-playlists {
+    padding: 5rem 2rem;
+    background-color: #222;
+    color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #mood-playlists .title-box {
+    background-color: var(--secondary-color);
+    color: var(--text-light-color);
+    padding: 25px 0;
+    font-size: 2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  #mood-playlists .title-box h2 {
+    font-size: 2.3rem;
+  }
+  #mood-playlists .speech-bubble {
+    font-size: 1.1rem;
+    font-style: italic;
+    position: relative;
+    margin-left: 30px;
+    margin-top: 40px;
+    line-height: 1rem;
+  }
+  #mood-playlists .speech-bubble::before {
+    content: "";
+    position: absolute;
+    top: 20px;
+    left: -10px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent #f8f9fa transparent transparent;
+  }
+  #mood-playlists .image-box {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    flex: 0 0 15%;
+    margin-right: 20px;
+    margin-top: 20px;
+  }
+  #mood-playlists .image-box .img-fluid {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  #mood-playlists .image-box:hover .img-fluid {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  }
+  @media (max-width: 768px) {
+    #mood-playlists {
+      padding: 4rem 1.5rem;
+      flex-direction: column;
+    }
+    #mood-playlists .title-box h2 {
+      font-size: 1.8rem;
+    }
+    #mood-playlists .text-box p {
+      font-size: 1rem;
+    }
+    #mood-playlists .image-box {
+      flex: 0 0 80%;
+      margin-right: 0;
+      margin-bottom: 1.5rem;
+    }
+    #mood-playlists .speech-bubble {
+      font-size: 1rem;
+      padding: 0.8rem;
+      margin-left: 0;
+      text-align: center;
+    }
+  }
+  @media (max-width: 576px) {
+    #mood-playlists .title-box h2 {
+      font-size: 1.6rem;
+    }
+    #mood-playlists .image-box .img-fluid {
+      border-radius: 8px;
+    }
+    #mood-playlists .speech-bubble {
+      font-size: 1rem;
+      padding: 0.8rem;
+      margin-left: 0;
+    }
+    #mood-playlists .image-box {
+      flex: 0 0 100%;
+      margin-right: 0;
+      margin-bottom: 1rem;
+    }
+  }
+  .priority-revisions {
+    margin-top: 3rem;
+    font-family: "Arial", sans-serif;
+    color: #f8f9fa;
+    padding: 2rem 1rem;
+  }
+  .priority-revisions .section-title {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    line-height: 1.4;
+  }
+  .priority-revisions .lead {
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+  }
+  .revision-ideas {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .revision-item {
+    background-color: #333;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .revision-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  }
+  .revision-item h4.idea-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+    line-height: 1.4;
+  }
+  .list-style {
+    list-style: none;
+    padding-left: 0;
+  }
+  .list-style li {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+  }
+  .list-style li strong {
+    font-weight: 600;
+    color: var(--primary-color);
+  }
+  @media (max-width: 768px) {
+    .priority-revisions .section-title {
+      font-size: 1.8rem;
+    }
+    .priority-revisions .lead {
+      font-size: 1rem;
+    }
+    .revision-item h4.idea-title {
+      font-size: 1.2rem;
+    }
+    .list-style li {
+      font-size: 1rem;
+    }
+    .revision-ideas {
+      gap: 1.5rem;
+    }
+  }
+  @media (max-width: 576px) {
+    .priority-revisions .section-title {
+      font-size: 1.6rem;
+    }
+    .priority-revisions .lead {
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .revision-item h4.idea-title {
+      font-size: 1.1rem;
+    }
+    .list-style li {
+      font-size: 1rem;
+    }
+    .revision-ideas {
+      gap: 1rem;
+    }
+  }
+  .future-steps,
+  .next-steps-section,
+  .what-i-learned-section {
+    background-color: #222;
+    color: #fff;
+    padding: 20px 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+  }
+  .future-steps-title-box {
+    background-color: #333;
+    color: #fff;
+    padding: 25px 0;
+    font-size: 2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+  }
+  .future-steps-title-box h2 {
+    font-size: 2.3rem;
+  }
+  .combined-section {
+    background-color: #222;
+    color: #f8f9fa;
+    border: 1px solid #444;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-family: "Arial", sans-serif;
+    line-height: 1.8;
+  }
+  .section-title {
+    color: var(--primary-color);
+    font-size: 1.6em;
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 5px;
+  }
+  .subtitle {
+    color: #00bfb6;
+    font-size: 1.2em;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  .combined-section p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+  .combined-section ul {
+    padding-left: 20px;
+    list-style: none;
+  }
+  .combined-section ul li {
+    margin-bottom: 10px;
+    position: relative;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  .combined-section ul li::before {
+    content: "•";
+    color: #00bfb6;
+    font-size: 1.5em;
+    position: absolute;
+    left: -20px;
+    top: 0;
+  }
+  .future-steps-text-box,
+  .next-steps-text-box,
+  .what-i-learned-text-box {
+    background-color: #2a2d32;
+    color: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    line-height: 1.6;
+    margin-top: 20px;
+    font-size: 1.1rem;
+  }
+  .future-steps-title-box h2 {
+    font-size: 2.3rem;
+  }
+  .list-style {
+    list-style: none;
+    padding-left: 0;
+  }
+  .list-style li {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+  }
+  .list-style li strong {
+    font-weight: 600;
+    color: #f9a825;
+  }
+  @media (max-width: 768px) {
+    .future-steps-title-box h2,
+    .next-steps-text-box p,
+    .what-i-learned-text-box p {
+      font-size: 1.8rem;
+    }
+    .future-steps-text-box p,
+    .next-steps-text-box p,
+    .what-i-learned-text-box p,
+    .list-style li {
+      font-size: 1rem;
+    }
+    .future-steps,
+    .next-steps-section,
+    .what-i-learned-section {
+      padding: 15px;
+    }
+  }
+  @media (max-width: 576px) {
+    .future-steps-title-box h2,
+    .next-steps-text-box p,
+    .what-i-learned-text-box p {
+      font-size: 1.6rem;
+    }
+    .future-steps-text-box p,
+    .next-steps-text-box p,
+    .what-i-learned-text-box p {
+      font-size: 1rem;
+    }
+    .combined-section,
+    .future-steps,
+    .next-steps-section,
+    .what-i-learned-section {
+      padding: 12px;
+    }
+    .list-style li {
+      font-size: 1rem;
+    }
+  }
+  

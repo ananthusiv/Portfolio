@@ -1,0 +1,269 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="KFC Dashboard Case Study - A comprehensive platform for managing restaurant operations, sales tracking, and customer feedback.">
+    <meta name="keywords" content="KFC Dashboard, Restaurant Management, Sales Tracking, UI/UX Design, Interactive Dashboard, Case Study">
+    <meta name="author" content="Ananthu S">
+    <title>KFC Dashboard Design Case Study</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Playfair+Display:wght@400;700&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="kfcdashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <div id="navbar-container"></div>
+
+    <header>
+        <div class="header-content">
+            <h1>KFC Dashboard Design Case Study</h1>
+            <p class="accent-text">A detailed case study showcasing the design and implementation of a KFC restaurant dashboard.</p>
+            <img src="Assets/kfc dashboard mockup.png" alt="KFC Dashboard Image" class="img-fluid header-img">
+        </div>
+    </header>
+
+    <section class="overview" id="overview">
+        <h2>Overview</h2>
+        <div class="overview-content">
+            <div class="overview-text">
+                <p>This project focuses on the creation of an interactive and visually appealing KFC dashboard, designed to assist restaurant managers in tracking essential business metrics such as sales, orders, product management, and customer feedback. The dashboard is built with a mobile-first, responsive approach, ensuring that it functions seamlessly across devices.</p>
+            </div>
+            <div class="overview-image">
+                <img src="Assets/overview-image.png" alt="Overview Image" class="img-fluid section-img">
+            </div>
+        </div>
+    </section>
+    
+
+    <section class="objective" id="objective">
+        <h2>Objective</h2>
+        <div class="objective-content">
+            <div class="objective-image">
+                <img src="Assets/objective-image.png" alt="Objective Image" class="img-fluid section-img">
+            </div>
+            <div class="objective-text">
+                <p>The goal of the KFC Dashboard was to provide restaurant managers with a comprehensive platform to:</p>
+                <ul>
+                    <li><i class="fas fa-chart-line"></i> Track daily, weekly, and monthly sales performance.</li>
+                    <li><i class="fas fa-box"></i> Manage orders and products efficiently.</li>
+                    <li><i class="fas fa-comments"></i> Gain insights from customer feedback.</li>
+                    <li><i class="fas fa-cogs"></i> Monitor inventory and staff performance.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+    <section class="features" id="features">
+        <h2>Key Features</h2>
+        <div class="features-content">
+            <div class="features-video">
+                <video class="section-video" autoplay muted loop>
+                    <source src="Assets/features-video.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="features-list">
+                <ul>
+                    <li><i class="fas fa-bars"></i><strong>Responsive Mobile Navbar</strong> - A collapsible, user-friendly mobile navigation bar.</li>
+                    <li><i class="fas fa-chart-line"></i><strong>Real-Time Analytics</strong> - Key metrics like Total Sales, New Orders, and Active Customers displayed with visual progress bars.</li>
+                    <li><i class="fas fa-boxes"></i><strong>Sales and Order Management</strong> - Track and manage orders with detailed charts and statistics.</li>
+                    <li><i class="fas fa-cogs"></i><strong>Product Management</strong> - Easy access to product details and the ability to add/edit products.</li>
+                    <li><i class="fas fa-comments"></i><strong>Customer Feedback & Inventory Management</strong> - View customer feedback and live inventory stock levels.</li>
+                    <li><i class="fas fa-users"></i><strong>Staff Performance</strong> - Display staff achievements and top performers.</li>
+                    <li><i class="fas fa-chart-pie"></i><strong>Interactive Charts & Graphs</strong> - Real-time data visualization using Chart.js for dynamic charting.</li>
+                    <li><i class="fas fa-adjust"></i><strong>Dynamic Theme</strong> - Switch between light and dark modes for user customization.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+
+    <section class="design-process" id="design-process">
+        <h2>Design Process</h2>
+        <div class="design-content">
+            <div class="design-images">
+                <img src="Assets/design-process-image1.png" alt="Design Process Image 1" class="img-fluid design-img">
+                <img src="Assets/design-process-image2.png" alt="Design Process Image 2" class="img-fluid design-img">
+                <img src="Assets/design-process-image3.png" alt="Design Process Image 3" class="img-fluid design-img">
+            </div>
+            <div class="design-description">
+                <p>The design was carefully thought through with wireframing and UI/UX principles in mind. Key steps included:</p>
+                <ul>
+                    <li><strong>Wireframing and Layout Planning</strong> - Clean and minimalistic wireframes ensuring a user-friendly interface.</li>
+                    <li><strong>UI/UX Design</strong> - A simple color palette, with KFC branding and clear visual cues for navigation.
+                        <div class="color-palette">
+                            <span class="color-swatch" style="background-color: #A41010;" title="KFC Red"></span>
+                            <span class="color-swatch" style="background-color: #FFFFFF;" title="White"></span>
+                            <span class="color-swatch" style="background-color: #000000;" title="Black"></span>
+                            <span class="color-swatch" style="background-color: #F4F4F4;" title="Light Gray"></span>
+                        </div>
+                    </li>
+                    <li><strong>User Interaction & Animation</strong> - Adding interactivity for dynamic feedback using JavaScript.</li>
+                    <li><strong>Data Visualization</strong> - Using Chart.js to display key performance data effectively.</li>
+                    <li><strong>Accessibility</strong> - Focusing on clear fonts, color contrast, and intuitive navigation for all users.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+
+    <section class="technical" id="technical">
+        <h2>Technical Implementation</h2>
+        <p class="tech-description">The dashboard was built using the following technologies:</p>
+        <div class="tech-list">
+            <div class="tech-item">
+                <img src="assets/html-logo.png" alt="HTML Icon" class="tech-icon">
+                <img src="assets/css-logo.webp" alt="CSS Icon" class="tech-icon">
+                <h3>HTML & CSS</h3>
+                <p>Clean and structured layout using Flexbox and Grid for responsiveness.</p>
+            </div>
+            <div class="tech-item">
+                <img src="assets/JS-logo.webp" alt="JavaScript Icon" class="tech-icon">
+                <h3>JavaScript</h3>
+                <p>Dynamic behavior for interactive features and data rendering.</p>
+            </div>
+            <div class="tech-item">
+                <img src="assets/chartjs-logo.webp" alt="Chart.js Icon" class="tech-icon">
+                <h3>Chart.js</h3>
+                <p>Real-time data visualization through interactive charts.</p>
+            </div>
+        </div>
+    </section>
+    <section class="challenges" id="challenges">
+        <h2>Challenges and Solutions</h2>
+        <p class="challenge-description">Throughout the project, several challenges arose. Here's how they were addressed:</p>
+        <div class="challenge-list">
+            <div class="challenge-item">
+                <div class="challenge-icon">
+                    <i class="fas fa-mobile-alt"></i>
+                </div>
+                <h3>Responsiveness</h3>
+                <p>Ensuring the dashboard worked seamlessly across all devices was critical.</p>
+                <div class="solution">
+                    <strong>Solution:</strong> Implemented a mobile-first design for consistent performance.
+                </div>
+            </div>
+            <div class="challenge-item">
+                <div class="challenge-icon">
+                    <i class="fas fa-database"></i>
+                </div>
+                <h3>Dynamic Data Handling</h3>
+                <p>Smoothly managing real-time data updates was a significant hurdle.</p>
+                <div class="solution">
+                    <strong>Solution:</strong> Used JavaScript for dynamic chart updates and rendering.
+                </div>
+            </div>
+            <div class="challenge-item">
+                <div class="challenge-icon">
+                    <i class="fas fa-user-friends"></i>
+                </div>
+                <h3>User Interaction Design</h3>
+                <p>Balancing functionality with a clean, user-friendly interface.</p>
+                <div class="solution">
+                    <strong>Solution:</strong> Simplified the interface with minimal visual clutter.
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="conclusion" id="conclusion">
+        <h2>Conclusion</h2>
+        <div class="conclusion-content">
+            <div class="conclusion-icon">
+                <i class="fas fa-flag-checkered"></i>
+            </div>
+            <p>The KFC Dashboard project successfully demonstrated my skills in web design and development. It combines a modern, responsive design with interactive data visualization tools to deliver an efficient user experience. This project not only enhanced my front-end development skills but also provided valuable insights into designing dashboards for real-time data management.</p>
+        </div>
+    </section>
+    
+    <section class="future" id="future">
+        <h2>Future Enhancements</h2>
+        <div class="future-content">
+            <div class="enhancement-item">
+                <div class="enhancement-icon">
+                    <i class="fas fa-sync-alt"></i>
+                </div>
+                <h3>Real-Time Data Updates</h3>
+                <p>Integration with backend services for live data updates to enhance real-time performance.</p>
+            </div>
+            <div class="enhancement-item">
+                <div class="enhancement-icon">
+                    <i class="fas fa-user-shield"></i>
+                </div>
+                <h3>User Roles and Permissions</h3>
+                <p>Introducing granular control over dashboard access and actions for better user management.</p>
+            </div>
+            <div class="enhancement-item">
+                <div class="enhancement-icon">
+                    <i class="fas fa-tachometer-alt"></i>
+                </div>
+                <h3>Performance Optimization</h3>
+                <p>Ensuring quick load times for larger data sets and improving rendering speed for smooth operation.</p>
+            </div>
+        </div>
+    </section>
+    
+
+    <div id="footer-container"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
+    <script>
+        function loadHTML(file, elementId, callback) {
+            fetch(file)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`Failed to fetch ${file}: ${response.statusText}`);
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    document.getElementById(elementId).innerHTML = data;
+                    if (callback) callback();
+                })
+                .catch(error => {
+                    console.error(`Error loading ${file}:`, error);
+                    document.getElementById(elementId).innerHTML = `<p>Error loading ${file}</p>`;
+                });
+        }
+
+        function setActiveLink() {
+            const currentPage = window.location.pathname.split('/').pop();
+            const links = {
+                'about.html': 'about-link',
+                'index.html': 'work-link',
+                'resume.html': 'resume-link',
+                'mailto': 'contact-link',
+                'linkedin': 'linkedin-link',
+            };
+            Object.values(links).forEach(linkId => {
+                const link = document.getElementById(linkId);
+                if (link) link.classList.remove('active');
+            });
+            for (const [page, linkId] of Object.entries(links)) {
+                if (currentPage === page || currentPage.includes(page)) {
+                    const activeLink = document.getElementById(linkId);
+                    if (activeLink) activeLink.classList.add('active');
+                }
+            }
+        }
+
+        function closeNavbarOnClickOutside() {
+            const navbar = document.querySelector('.navbar-collapse');
+            const navbarToggler = document.querySelector('.navbar-toggler');
+            document.addEventListener('click', function(event) {
+                if (!navbar.contains(event.target) && !navbarToggler.contains(event.target)) {
+                    navbar.classList.remove('show');
+                }
+            });
+        }
+
+        window.onload = function () {
+            loadHTML('navbar.html', 'navbar-container', function () {
+                setActiveLink();
+                closeNavbarOnClickOutside();
+            });
+            loadHTML('footer.html', 'footer-container');
+        };
+    </script>
+</body>
