@@ -478,28 +478,105 @@ body {
     color:#a41010
     }
     
-    @media (max-width: 768px) {
+   /* Media Queries for Responsiveness */
+
+/* For screens up to 1024px */
+@media (max-width: 1024px) and (min-width: 769px) {
     .features-content {
-    flex-direction:column;
-    text-align:center
-    }
+        flex-direction: column; /* Stack elements vertically */
+        text-align: center; /* Center text */
+      }
     
+      .features-list {
+        text-align: center; /* Center the list items */
+      }
+    
+      .features h2 {
+        font-size: 2rem; /* Adjust title size */
+      }
+    
+      .features-list li {
+        font-size: 1rem; /* Adjust list item font size */
+      }
+    
+      .features-video {
+        max-width: 50%; /* Make the video smaller and more responsive */
+        margin-bottom: 20px; /* Add space below video */
+      }
+    }
+  /* For screens up to 768px */
+  @media (max-width: 768px) {
+    .features-content {
+      flex-direction: column; /* Stack elements vertically */
+      text-align: center; /* Center text */
+    }
+  
     .features-list {
-    text-align:center
+      text-align: center; /* Center the list items */
     }
-    
+  
     .features h2 {
-    font-size:2rem
+      font-size: 2rem; /* Adjust title size */
     }
-    
+  
     .features-list li {
-    font-size:1rem
+      font-size: 1rem; /* Adjust list item font size */
     }
-    
+  
     .features-video {
-    max-width:100%
+      max-width: 70%; /* Make the video smaller and more responsive */
+      margin-bottom: 20px; /* Add space below video */
     }
+  }
+  
+  /* For screens up to 576px */
+  @media (max-width: 576px) {
+    .features-content {
+      flex-direction: column; /* Stack elements vertically */
+      text-align: center; /* Center text */
     }
+  
+    .features-list {
+      text-align: center; /* Center the list items */
+    }
+  
+    .features h2 {
+      font-size: 1.6rem; /* Further decrease title font size */
+    }
+  
+    .features-list li {
+      font-size: 0.95rem; /* Smaller list item font size for better fit */
+    }
+  
+    .features-video {
+      max-width: 100%; /* Ensure video fits smaller screens */
+    }
+  }
+  
+  /* For screens above 1024px (default layout) */
+  @media (min-width: 1025px) {
+    .features-content {
+      flex-direction: row; /* Place items in a row for larger screens */
+      text-align: left; /* Align text to the left */
+    }
+  
+    .features-list {
+      text-align: left; /* Align list items to the left */
+    }
+  
+    .features h2 {
+      font-size: 2.5rem; /* Keep large font size for desktop */
+    }
+  
+    .features-list li {
+      font-size: 1.2rem; /* Adjust font size for better readability */
+    }
+  
+    .features-video {
+      max-width: 80%; /* Limit video width on larger screens */
+    }
+  }
+  
     
     .design-process {
     background-color:#f9f9f9;
