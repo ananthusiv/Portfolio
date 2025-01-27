@@ -1,97 +1,99 @@
 <!DOCTYPE html>
-<html lang=en>
+<html lang="en">
 <head>
-<meta charset=UTF-8>
-<meta name=viewport content="width=device-width, initial-scale=1.0">
-<title>Portfolio</title>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Playfair+Display:wght@400;700&family=Roboto+Slab:wght@400;700&display=swap" rel=stylesheet>
-<link href=https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css rel=stylesheet>
-<link rel=stylesheet href=index.css>
-<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-<div id=navbar-container></div>
-<div class="container text-center portfolio-intro-section">
-<div class=portfolio-intro-text>
-<h1>Hello! <br><span class=portfolio-name>I'm Ananthu S.</span></h1>
-<h2>Creative UI/UX Designer</h2>
-<p>Let’s craft intuitive and engaging user experiences together.</p>
-</div>
-</div>
-<section class="container index-portfolio-project-section">
-    <div class="row justify-content-center">
-    
-    <!-- Soul Music Card -->
-    <div class="col-lg-4 col-md-6 mb-4">
-    <div class=index-project-card-container>
-    <div id=card1 class=index-project-card>
-    <div class=project-image-container>
-    <img src="Assets/Project image.png" alt="Soul Music AI Feature" class="img-fluid index-project-image">
-    </div>
-    <h2 class=index-project-title-front>
-    <i class="fas fa-music"></i> Soul Music – AI-powered Personalized Playlist Feature
-    </h2>
-    <div class=card-back>
-    <h2 class=index-project-title-back>
-    <i class="fas fa-music"></i> Soul Music – AI-powered Personalized Playlist Feature
-    </h2>
-    <p class=index-project-text-back>
-    <strong style=color:#3498db>Problem:</strong> Users have difficulty finding music that suits their mood and boosts emotional well-being.
-    </p>
-    <p class=index-project-text-back>
-    <strong style=color:#3498db>Solution:</strong> An AI-powered mood assessment feature that suggests playlists based on user emotions.
-    </p>
-    <p class=index-project-text-back>
-    <strong style=color:#3498db>Outcome:</strong> Enhanced user engagement with personalized, mood-based music recommendations.
-    </p>
-    </div>
-    <a id=arrowButton href=soulmusic.html class=arrow-button>
-    <i class="fas fa-arrow-left"></i>
+  <div id="navbar-container"></div>
+
+  <!-- Hero Section (Splash Animation) -->
+  <div id="hero" class="hero-section">
+    <div class="text initial">Welcome to my work</div>
+    <div class="yellow-box"></div>
+    <div class="text final">Looking forward to collaborating</div>
+    <div class="arrow" id="scroll-arrow"></div>
+  </div>
+
+  <section id="projects-section" style="display: none; opacity: 0;">
+    <p class="section-title">My Work</p>
+    <h2 class="section-heading">The projects I've been working on</h2>
+
+    <div class="project-container">
+      <!-- Project Info List -->
+      <div class="project-list">
+        <ul>
+          <li class="project-item active" data-target="0">
+            <i class="fas fa-music"></i> Soul Music – AI-powered Personalized Playlist
+          </li>
+          <li class="project-item" data-target="1">
+            <i class="fas fa-chart-line"></i> KFC Dashboard – Sales & Inventory Analytics
+          </li>
+        </ul>
+      </div>
+
+      <div class="project-image-container" id="image-0">
+        <a href="soulmusic.html">
+          <img id="project-image" src="Assets/Project image.png" alt="Soul Music AI Feature" class="img-fluid">
+        </a>
+      </div>
+      
+
+      <div class="project-image-container" id="image-1" style="display: none;">
+        <a href="kfcdashboard.html">
+        <img id="project-image-2" src="Assets/kfc dashboard mockup.png" alt="KFC Dashboard" class="img-fluid">
     </a>
+      </div>
     </div>
-    </div>
-    </div>
-    
-    <!-- KFC Dashboard Card -->
-    <div class="col-lg-4 col-md-6 mb-4">
-    <div class=index-project-card-container>
-    <div id=card2 class=index-project-card>
-    <div class=project-image-container>
-    <img src="Assets/kfc dashboard.png" alt="KFC Dashboard Feature" class="img-fluid index-project-image">
-    </div>
-    <h2 class=index-project-title-front style="color: #C41230;">
-    <i class="fas fa-chart-pie" style="color: #C41230;"></i> KFC Dashboard – Real-time Sales and Inventory Analytics
-    </h2>
-    <div class=card-back>
-    <h2 class=index-project-title-back style="color: #C41230;">
-    <i class="fas fa-chart-pie" style="color: #C41230;"></i> KFC Dashboard – Real-time Sales and Inventory Analytics
-    </h2>
-    <p class=index-project-text-back>
-    <strong style="color: #C41230;">Problem:</strong> Managing real-time inventory and sales performance across multiple branches efficiently.
-    </p>
-    <p class=index-project-text-back>
-    <strong style="color: #C41230;">Solution:</strong> A centralized dashboard providing real-time analytics on sales, inventory, and branch performance.
-    </p>
-    <p class=index-project-text-back>
-    <strong style="color: #C41230;">Outcome:</strong> Improved operational efficiency and decision-making with data-driven insights.
-    </p>
-    </div>
-    <a id=arrowButton href=kfcdashboard.html class=arrow-button>
-    <i class="fas fa-arrow-left"></i>
-    </a>
-    </div>
-    </div>
-    </div>
-    
-    </div>
-    </section>
-    
-<div id=footer-container></div>
-<script src=https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js></script>
-<script src=https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js></script>
-<script>function loadHTML(file,elementId,callback){fetch(file).then(response=>response.text()).then(data=>{document.getElementById(elementId).innerHTML=data;if(callback)callback();}).catch(error=>console.error("Error loading file:",error));}
-function setActiveLink(){let currentPage=window.location.pathname.split("/").pop();if(currentPage==="")currentPage="index.html";const links={"about.html":"about-link","index.html":"work-link","mailto:ananthsiv15@gmail.com":"contact-link","https://www.linkedin.com/in/-ananthus/":"linkedin-link",};Object.values(links).forEach(linkId=>{const link=document.getElementById(linkId);if(link)link.classList.remove("active");});for(const[page,linkId]of Object.entries(links)){if(currentPage===page||currentPage.includes(page)){const activeLink=document.getElementById(linkId);if(activeLink)activeLink.classList.add("active");}}}
-function closeNavbarOnClickOutside(){const navbar=document.querySelector(".navbar-collapse");const navbarToggler=document.querySelector(".navbar-toggler");document.addEventListener("click",function(event){if(!navbar.contains(event.target)&&!navbarToggler.contains(event.target)){navbar.classList.remove("show");}});}
-window.onload=function(){loadHTML("navbar.html","navbar-container",function(){loadHTML("footer.html","footer-container",function(){setActiveLink();closeNavbarOnClickOutside();});});};document.addEventListener('DOMContentLoaded',function(){const card=document.querySelector('#card1');const arrowButton=document.querySelector('#arrowButton');card.addEventListener('transitionend',function(){if(card.style.transform==='rotateY(180deg)'){arrowButton.style.display='block';}else{arrowButton.style.display='none';}});card.addEventListener('mouseenter',function(){card.style.transform='rotateY(180deg)';});card.addEventListener('mouseleave',function(){card.style.transform='rotateY(0deg)';});});</script>
+  </section>
+
+  <footer id="footer-container"></footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Scroll to Projects Section when arrow is clicked and reveal the section
+    document.getElementById('scroll-arrow').addEventListener('click', function() {
+      let projectsSection = document.getElementById('projects-section');
+      projectsSection.style.display = 'block';
+      setTimeout(function () {
+        projectsSection.style.opacity = '1'; // Fade-in
+      }, 50);
+
+      // Scroll to the projects section smoothly
+      projectsSection.scrollIntoView({ behavior: 'smooth' });
+    });
+
+    // Load external HTML (Navbar and Footer) dynamically
+    function loadHTML(file, elementId) {
+      fetch(file).then(response => response.text()).then(data => {
+        document.getElementById(elementId).innerHTML = data;
+      }).catch(error => console.error("Error loading file:", error));
+    }
+
+    window.onload = function () {
+      loadHTML("navbar.html", "navbar-container");
+      loadHTML("footer.html", "footer-container");
+    };
+
+    // Get all project items and the image container
+    const projectItems = document.querySelectorAll('.project-item');
+    const projectImageContainers = document.querySelectorAll('.project-image-container');
+
+    // Add event listeners to each project item
+    projectItems.forEach((item, index) => {
+      item.addEventListener('click', () => {
+        projectItems.forEach(item => item.classList.remove('active'));
+        item.classList.add('active');
+        projectImageContainers.forEach(container => container.style.display = 'none');
+        const activeImage = document.getElementById(`image-${index}`);
+        activeImage.style.display = 'block';
+      });
+    });
+  </script>
 </body>
 </html>
