@@ -1,68 +1,132 @@
 <!DOCTYPE html>
-<html lang=en>
+<html lang="en">
 <head>
-<meta charset=UTF-8>
-<meta name=viewport content="width=device-width, initial-scale=1.0">
-<meta name=description content="Portfolio of Ananthu S, UI/UX Designer">
-<meta name=keywords content="Portfolio, UI/UX Design, Web Development, Science Tutor">
-<meta name=author content="Ananthu S">
-<title>Portfolio</title>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Playfair+Display:wght@400;700&family=Roboto+Slab:wght@400;700&display=swap" rel=stylesheet>
-<link href=https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css rel=stylesheet>
-<link rel=stylesheet href=about.css>
-<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Ananthu S, UI/UX Designer">
+    <meta name="keywords" content="Portfolio, UI/UX Design, Web Development, Science Tutor">
+    <meta name="author" content="Ananthu S">
+    <title>Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Playfair+Display:wght@400;700&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="about.css"> <!-- Reference to external CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-<div id=navbar-container></div>
-<div class=about-main-container>
-<div class="row about-profile-section align-items-center mb-5">
-<div class=col-md-4>
-<img src="Assets/Profile Image.png" alt="Profile Image" class="about-profile-image fade-in">
-</div>
-<div class="col-md-8 about-text-box fade-in">
-<h1 class=about-intro-heading>
-<span class=hover-magnify>Hello!</span>
-</h1>
-<h1 class=about-intro-heading><span class=hover-magnify>I’m Ananthu S</span> </h1>
-</div>
-</div>
-<section class=about-description>
-<p>
-<span class=about-large-text>Before I became a UI/UX designer,</span> I spent a few years tutoring science subjects.
-As a freelance home tutor, I enjoyed working one-on-one with high school and higher secondary students,
-helping them grasp complex concepts in physics and other sciences. I found great satisfaction in
-developing personalized lesson plans that catered to each student’s unique learning style. It taught me
-the value of tailoring experiences for individual needs—something that translates well into design work.
-I aimed to create a learning environment where students felt comfortable asking questions and exploring
-difficult concepts. Think hands-on experiments and real-world applications. Seeing students improve
-their problem-solving skills reinforced my passion for simplifying complexity.
-<br><br>
-<strong>Design entered my scene recently, after a formal course in UI/UX.</strong><br>
-I’ve always had a curiosity for technology, which led me to web development and, later, user-centered
-design. Through my journey with Figma and responsive design projects, I learned to craft intuitive,
-accessible interfaces that focus on the user's needs and preferences. This hands-on experience allowed
-me to apply both creative and analytical thinking, similar to my tutoring days but in a digital space.
-<br><br>
-<strong>Why UI/UX design?</strong>
-<br>
-UI/UX design allows me to improve how people interact with digital products. My background in tutoring
-equipped me with empathy, while my technical skills enable me to craft solutions that make digital
-experiences smoother and more engaging. I’m excited to collaborate with designers and developers alike,
-building interfaces that truly empower users.
-<br>
-Moving forward, I’m excited to collaborate with other designers and developers to create thoughtful,
-user-friendly interfaces that engage and empower users.
-</p>
-</section>
-</div>
-<div id=footer-container></div>
-<script src=https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js></script>
-<script src=https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js></script>
-<script src=https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js></script>
-<script src=https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js></script>
-<script>function loadHTML(file,elementId,callback){fetch(file).then(response=>response.text()).then(data=>{document.getElementById(elementId).innerHTML=data;if(callback)callback();}).catch(error=>console.error('Error loading file:',error));}
-function setActiveLink(){const currentPage=window.location.pathname.split('/').pop();const links={'about.html':'about-link','index.html':'work-link','resume.html':'resume-link','mailto':'contact-link','linkedin':'linkedin-link',};Object.values(links).forEach(linkId=>{const link=document.getElementById(linkId);if(link)link.classList.remove('active');});for(const[page,linkId]of Object.entries(links)){if(currentPage===page||currentPage.includes(page)){const activeLink=document.getElementById(linkId);if(activeLink)activeLink.classList.add('active');}}}
-function closeNavbarOnClickOutside(){const navbar=document.querySelector('.navbar-collapse');const navbarToggler=document.querySelector('.navbar-toggler');document.addEventListener('click',function(event){if(!navbar.contains(event.target)&&!navbarToggler.contains(event.target)){navbar.classList.remove('show');}});}
-window.onload=function(){loadHTML('navbar.html','navbar-container',function(){loadHTML('footer.html','footer-container',function(){setActiveLink();closeNavbarOnClickOutside();});});};</script>
+    <header id="navbar-container" role="navigation" aria-label="Main navigation"></header>
+    
+    <main class="about-main-container" role="main">
+        <section class="row about-profile-section align-items-center mb-5">
+            <div class="col-md-4">
+                <img src="Assets/Profile Image.png" alt="Ananthu S Profile" class="about-profile-image fade-in">
+            </div>
+            <div class="col-md-8 about-text-box fade-in">
+                <h1 class="about-intro-heading">
+                    <span class="hover-magnify">Hello!</span>
+                </h1>
+                <h1 class="about-intro-heading"><span class="hover-magnify">I’m Ananthu S</span></h1>
+                <section class="about-description">
+                    <p>
+                        <span class="about-large-text" onclick="toggleText(this)">
+                            <strong>Before I became a UI/UX designer</strong>
+                            <i class="fas fa-plus-circle text-primary" style="margin-left: 10px;"></i>
+                        </span>
+                        <span class="collapsible-text">
+                            I spent a few years tutoring science subjects. As a freelance home tutor, I enjoyed working one-on-one with high school and higher secondary students, helping them understand complex concepts in physics, chemistry, and mathematics. This experience not only enhanced my communication skills but also gave me a deep understanding of how individuals learn differently, which has been invaluable in my career as a UI/UX designer. It also allowed me to develop patience and empathy, essential traits for designing user-centric products.
+                        </span>
+                        
+                        <br><br>
+
+                        <span class="about-large-text" onclick="toggleText(this)">
+                            <strong>How the Design entered my scene</strong>
+                            <i class="fas fa-plus-circle text-primary" style="margin-left: 10px;"></i>
+                        </span>
+                        <span class="collapsible-text">
+                            After a formal course in UI/UX, I’ve always had a curiosity for technology, which led me to web development and, later, user-centered design. Through my journey with Figma and responsive design projects, I learned to craft intuitive, accessible interfaces that focus on the user's needs and preferences. This hands-on experience allowed me to apply both creative and analytical thinking, similar to my tutoring days but in a digital space.
+                        </span>
+                        <br><br>
+
+                        <span class="about-large-text" onclick="toggleText(this)">
+                            <strong>Why UI/UX design?</strong>
+                            <i class="fas fa-plus-circle text-primary" style="margin-left: 10px;"></i>
+                        </span>
+                        <span class="collapsible-text">
+                            UI/UX design allows me to improve how people interact with digital products. My background in tutoring equipped me with empathy, while my technical skills enable me to craft solutions that make digital experiences smoother and more engaging. I’m excited to collaborate with designers and developers alike, building interfaces that truly empower users.
+                        </span>
+                    </p>
+                </section>
+            </div>
+        </section>
+    </main>
+
+    <footer id="footer-container"></footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+    <script>
+        function toggleText(element) {
+            const collapsibleText = element.nextElementSibling;
+            const icon = element.querySelector('i');
+            
+            // Toggle text visibility
+            collapsibleText.classList.toggle('show');
+            
+            // Toggle icon between plus and minus
+            if (collapsibleText.classList.contains('show')) {
+                icon.classList.remove('fa-plus-circle');
+                icon.classList.add('fa-minus-circle');
+            } else {
+                icon.classList.remove('fa-minus-circle');
+                icon.classList.add('fa-plus-circle');
+            }
+        }
+
+        function loadHTML(file, elementId, callback) {
+            fetch(file).then(response => response.text()).then(data => {
+                document.getElementById(elementId).innerHTML = data;
+                if (callback) callback();
+            }).catch(error => console.error('Error loading file:', error));
+        }
+
+        function setActiveLink() {
+            const currentPage = window.location.pathname.split('/').pop();
+            const links = {
+                'about.html': 'about-link',
+                'index.html': 'work-link',
+                'resume.html': 'resume-link',
+                'mailto': 'contact-link',
+                'linkedin': 'linkedin-link',
+            };
+            Object.values(links).forEach(linkId => {
+                const link = document.getElementById(linkId);
+                if (link) link.classList.remove('active');
+            });
+            for (const [page, linkId] of Object.entries(links)) {
+                if (currentPage === page || currentPage.includes(page)) {
+                    const activeLink = document.getElementById(linkId);
+                    if (activeLink) activeLink.classList.add('active');
+                }
+            }
+        }
+
+        function closeNavbarOnClickOutside() {
+            const navbar = document.querySelector('.navbar-collapse');
+            const navbarToggler = document.querySelector('.navbar-toggler');
+            document.addEventListener('click', function (event) {
+                if (!navbar.contains(event.target) && !navbarToggler.contains(event.target)) {
+                    navbar.classList.remove('show');
+                }
+            });
+        }
+
+        window.onload = function () {
+            loadHTML('navbar.html', 'navbar-container', function () {
+                loadHTML('footer.html', 'footer-container', function () {
+                    setActiveLink();
+                    closeNavbarOnClickOutside();
+                });
+            });
+        };
+    </script>
 </body>
 </html>
